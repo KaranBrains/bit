@@ -25,7 +25,7 @@ interface MarketData {
 })
 export class MarketComponent implements OnInit {
 
-  marketData: MarketData[]  =MarketConfig ;
+  marketData: MarketData[] = MarketConfig ;
 
   constructor() { }
 
@@ -34,6 +34,6 @@ export class MarketComponent implements OnInit {
 
   onClick(){
     console.log("hello")
-    }
+  }
 
 }

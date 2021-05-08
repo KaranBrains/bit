@@ -1,6 +1,6 @@
 <div class="container table-responsive">
     <table *ngFor="let marketData of marketData" class="table table-responsive table-borderless market_table">
-        <tr class="d-flex" data-toggle="collapse" [attr.data-target]="marketData.id">
+        <tr class="d-flex" data-toggle="collapse" [attr.data-target]="'#'+ marketData.crpto">
             <td>{{marketData.crpto}}</td>
             <td>{{marketData.last}}</td>
             <td>{{marketData.bid}}</td>
@@ -13,7 +13,7 @@
             <td>{{marketData.total}}</td>
             <td></td>
         </tr>
-        <div class="collapse out" (click)="onClick()" [id]="marketData.id">
+        <div class="collapse out" [attr.id]="marketData.crpto">
             <tr>
                 <p>{{marketData.about}}</p>
             </tr>
