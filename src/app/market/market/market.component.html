@@ -1,1 +1,28 @@
-<p>market works!</p>
+<div class="container table-responsive">
+    <table *ngFor="let marketData of marketData" class="table table-responsive table-borderless market_table">
+        <tr class="d-flex" data-toggle="collapse" [attr.data-target]="marketData.id">
+            <td>{{marketData.crpto}}</td>
+            <td>{{marketData.last}}</td>
+            <td>{{marketData.bid}}</td>
+            <td>{{marketData.ask}}</td>
+            <td>{{marketData.high}}</td>
+            <td>{{marketData.low}}</td>
+            <td>{{marketData.mktcap}}</td>
+            <td>{{marketData.vol}}</td>
+            <td>{{marketData.change}}</td>
+            <td>{{marketData.total}}</td>
+            <td></td>
+        </tr>
+        <div class="collapse out" (click)="onClick()" [id]="marketData.id">
+            <tr>
+                <p>{{marketData.about}}</p>
+            </tr>
+            <tr>
+                <div>
+                    hey
+                </div>
+            </tr>
+        </div>
+    </table>
+</div>
+ 

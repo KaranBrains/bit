@@ -1,0 +1,7 @@
+.market_table{
+    background-color:#3c4964;
+    color:#ffffff;
+}
+.market_table tr,td{
+    width:100%;
+}
