@@ -1,0 +1,74 @@
+.tab-curr-icon {
+  max-width: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.active-sort{
+  color: white !important;
+  font-weight: bold !important;
+}
+.percent-up {
+  color: #4b9539;
+}
+
+.percent-down {
+  color: #bb162a;
+}
+.info-hide{
+  transition: all 0.5s ease-in-out;
+  display: none;
+}
+.info-display{
+  transition: all 0.5s ease-in-out;
+  display: block;
+}
+.popper-block{
+  overflow-y: scroll;
+  height: 165px;
+}
+.normal-font{
+  font-weight: initial;
+}
+.chart {
+  display: block;
+  height: 420px;
+}
+.link-cursor{
+  cursor: pointer;
+}
+.top-submenu-coin{
+  width: 300px !important;
+}
+.top-submenu-exc{
+  width: 400px !important;
+}
+.active{
+  display: block !important;
+}
+.inactive{
+  display: none;
+}
+.search-coin{
+  max-height:160px;
+  overflow-y:scroll;
+}
+.search-exchange{
+  max-height:145px;
+  overflow-y:scroll;
+}
+
+main{
+  background-image: none!important;
+}
+
+body{
+  /* background-image: url("/assets/img/bg.jpg"); */
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  letter-spacing: .5px;
+  line-height: 19px;
+
+}
+

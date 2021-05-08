@@ -1,0 +1,716 @@
+<!-- Header Start -->
+
+<div class="home-header">
+
+  <div id="particles-js" class="particles-container"></div>
+
+    <div class="header-container">      
+      <div class="mx-auto container">
+        <div class="row">
+          <div class="col-md-6 header-image">
+            <a target="_blank" class="home-slide-img" title="View free live price data">
+              <img src="../../../assets/img/slide-img-1.png" class="img-fluid" alt="">
+            </a>
+          </div>
+          <div class="col-md-6">
+            <div class=" pt-5">
+              <div class="text-center">
+                <div class="pl-4 pr-4">
+                  <h3 class="heading text-white">Bitcoin and Cryptocurrency Price API that powers your Crypto and Blockchain apps</h3>
+                </div>
+                <div class="button-set ">
+                  <a class="btn btn-w btn-primary btn-lg pl-5 pr-5 mt-3 ml-4" href="#plans">Try for Free</a>
+                  <a class="btn btn-w btn-outline-light btn-lg pl-5 pr-5 mt-3 ml-4" href="#service">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-2 mb-2">
+        <div class="row">
+          <div class="col-12">
+            <div class="marquee">
+              <div class="marquee-content">
+                  <span class="collection-1">
+                    <div class="exchange-container" *ngFor="let exchangeData of dummyData" >
+                      <span class="exchangePrice">
+                          <span class="text-white">{{exchangeData.name}}</span>
+                          <span> - </span>
+                          <span [ngStyle]="{color: (exchangeData.change < 0)?'red':'green'}">{{exchangeData.symbol}} {{exchangeData.price}}</span>
+                      </span><br>
+                      <span class="" [ngStyle]="{color: (exchangeData.change < 0)?'red':'green'}">
+                          <i class="fa fa-lg" [ngClass]="exchangeData.change < 0? 'fa-caret-down': 'fa-caret-up'"
+                            [ngStyle]="{color: (exchangeData.change < 0)?'red':'green'}"></i>
+                          {{exchangeData.symbol}} {{exchangeData.change?exchangeData.change:"N/A"}}
+                      </span>
+                    </div>
+                  </span>
+                  <span class="collection-2">
+                    <div class="exchange-container" *ngFor="let exchangeData of dummyData" >
+                      <span class="exchangePrice">
+                          <span class="text-white">{{exchangeData.name}}</span>
+                          <span> - </span>
+                          <span [ngStyle]="{color: (exchangeData.change < 0)?'red':'green'}">{{exchangeData.symbol}} {{exchangeData.price}}</span>
+                      </span><br>
+                      <span  class="" [ngStyle]="{color: (exchangeData.change < 0)?'red':'green'}">
+                          <i class="fa fa-lg" [ngClass]="exchangeData.change < 0? 'fa-caret-down': 'fa-caret-up'"
+                            [ngStyle]="{color: (exchangeData.change < 0)?'red':'green'}"></i>
+                          {{exchangeData.symbol}} {{exchangeData.change?exchangeData.change:"N/A"}}
+                      </span>
+                    </div>
+                  </span>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+  </div>
+  
+  <!-- Header End -->
+  
+  <!-- Projects Start -->
+  <div class="container-fluid pt-5 pb">
+      <div class="container ">
+        <div class="row">
+          <div class="col-12 mt-4 mb-3">
+            <h1 class="section-title text-center font-weight-bold">What you can build</h1>
+            <p class="text-center"> 4 successful projects you can build using our Bitcoin price API</p>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-12   col-sm-12 col-md-6 col-lg-3 pl-4 pr-4 pb-4 ">
+            <div class="row  pl-2 pr-2 pt-4 border border-primary project-container  bg-light ">
+              <div class="col-12 rounded image-container">
+                <img src="../../../assets/img/mobile-app.png" alt="Mobile App" class="rounded h-100 w-100 object-fit-cover">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title section-underline font-weight-bold">Crypto mobile apps </a>
+                </h4>
+                <p class="mb-5">
+                  Get reliable and up-to-date price feed for 1000+ cryptocurrency markets for your wallet, portfolio or notifier iOS and Android apps.
+                </p>
+              </div>
+  
+            </div>
+          </div>
+  
+          <div class="col-12  col-sm-12 col-md-6 col-lg-3 pr-4 pl-4 pb-4">
+            <div class="row  pl-2 pr-2 pt-4 border border-primary project-container  bg-light ">
+              <div class="col-12 rounded image-container">
+                <img src="../../../assets/img/live-markets.png" alt="Realtime analysis via Websockets" class="rounded h-100 w-100 object-fit-cover">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title section-underline font-weight-bold">Realtime analysis via Websockets </a>
+                </h4>
+                <p class="mb-5">
+                  Analyse the price movement in real time and notice trends before everyone else.
+                </p>
+              </div>
+  
+            </div>
+          </div>
+  
+          <div class="col-12  col-sm-12 col-md-6 col-lg-3 pr-4 pl-4 pb-4">
+            <div class="row  pl-2 pr-2 pt-4 border border-primary project-container  bg-light ">
+              <div class="col-12 rounded image-container">
+                <img src="../../../assets/img/history.jpg" alt="History analysis" class="rounded h-100 w-100 object-fit-cover">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title section-underline font-weight-bold">History analysis </a>
+                </h4>
+                <p class="mb-5">
+                  Use our history data to analyse the price movements in the past and derive insights
+                </p>
+              </div>
+  
+            </div>
+          </div>
+  
+  
+          <div class="col-12  col-sm-12 col-md-6 col-lg-3 pr-4 pl-4 pb-4 ">
+            <div class="row  pl-2 pr-2 pt-4 border border-primary project-container  bg-light ">
+              <div class="col-12 rounded image-container">
+                <img src="../../../assets/img/python-code.jpg" alt="Mobile App" class="rounded h-100 w-100 object-fit-cover">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title section-underline font-weight-bold">Custom endpoints </a>
+                </h4>
+                <p class="mb-5">
+                  Looking to expand your existing product in the crypto space? Get custom endpoint built that fits right into your existing products.
+                </p>
+              </div>
+  
+            </div>
+          </div>
+         
+  
+          <div class="col-12 text-center mt-5 mb-5">
+            <button class="btn btn-w btn-primary btn-lg pl-5 pr-5 font-weight-bold">Try for Free</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  <!-- Project End -->
+  
+  <!-- Price API Start-->
+  
+  <div class="container-fluid pt-5 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6  mx-auto">
+        
+            <h1 class="section-title text-center font-weight-bold">Bitcoin Price Api</h1>
+            <p class="text-center"> 
+              Our Bitcoin price api has one of the longest running price indexes dating back to 2013.
+              By constantly pushing the limit we have integrated the bitcoin ticker price from over 50 exchanges which enables us to provide one of the most accurate and reliable Bitcoin price APIs on the market.
+  
+            </p>
+  
+            <p class="text-center mt-3"> 
+              Starting initially with Bitcoin to USD, Bitcoin to EUR, Bitcoin to GBP we have grown our Bitcoin ticker price API to support all 172 major fiat currencies of the world
+            </p>
+      </div>
+      <div class="col-12 text-center mt-4">
+        <button class="btn btn-w btn-primary btn-lg pl-5 pr-5 font-weight-bold">Try for Free</button>
+      </div>
+    </div>  
+  </div>
+  <!-- Price API End -->
+  
+  <!-- Key benifits and Features Start -->
+  
+  <div class="container-fluid pt-5 pb">
+    <div class="container ">
+      <div class="row">
+        <div class="col-12 mt-4 mb-3">
+          <h1 class="section-title text-center font-weight-bold">Key benifits and features</h1>
+          <p class="text-center"> Reliability and ease of use are of upmost importance to our users</p>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-12  col-sm-12 col-md-6 col-lg-3 pl-4 pr-4 pb-4 ">
+          <div class="row  pl-2 pr-2 pt-4 border border-primary project-container  bg-light ">
+            <div class="col-12 rounded image-container text-center">
+              <img src="../../../assets/img/solutions1.png" alt="Trusted" class="rounded ">
+              <h5 class="w-100 text-center mt-3">
+                <a class="section-title  font-weight-bold">Trusted </a>
+              </h5>
+              <p class="mb-5">
+                The world's longest operating bitcoin price index, used by many of the industry's leading businesses.
+              </p>
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="col-12  col-sm-12 col-md-6 col-lg-3 pl-4 pr-4 pb-4 ">
+          <div class="row  pl-2 pr-2 pt-4 border border-primary project-container  bg-light ">
+            <div class="col-12 rounded image-container text-center">
+              <img src="../../../assets/img/solutions2.png" alt="High Availability" class="rounded">
+              <h5 class="w-100 text-center mt-3">
+                <a class="section-title  font-weight-bold">High Availability </a>
+              </h5>
+              <p class="mb-5">
+                Analyse the price movement in real time and notice trends before everyone else.
+              </p>
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="col-12  col-sm-12 col-md-6 col-lg-3 pl-4 pr-4  pb-4">
+          <div class="row  pl-2 pr-2 pt-4 border border-primary project-container  bg-light ">
+            <div class="col-12 rounded image-container text-center">
+              <img src="../../../assets/img/solutions3.png" alt="Exchange Independent" class="rounded ">
+              <h5 class="w-100 text-center mt-3">
+                <a class="section-title  font-weight-bold">Exchange Independent </a>
+              </h5>
+              <p class="mb-5">
+                Remove reliance on a single exchange, our index averages over 50 and is not effected by their downtime.
+              </p>
+            </div>
+  
+          </div>
+        </div>
+  
+  
+        <div class="col-12  col-sm-12 col-md-6 col-lg-3 pl-4 pr-4 pb-4 ">
+          <div class="row  pl-2 pr-2 pt-4 border border-primary project-container  bg-light ">
+            <div class="col-12 rounded  image-container text-center">
+              <img src="../../../assets/img/solutions4.png" alt="Simple Integration" class="rounded ">
+              <h5 class="w-100 text-center mt-3">
+                <a class="section-title  font-weight-bold">Simple Integration </a>
+              </h5>
+              <p class="mb-5">
+                Detailed <span class="text-primary">documentation</span> and code snippets provided in various languages and hosted on <span class="text-primary">Github</span>
+              </p>
+            </div>
+  
+          </div>
+        </div>
+       
+  
+        <div class="col-12 text-center mt-5 mb-5">
+          <button class="btn btn-w btn-primary btn-lg pl-5 pr-5 font-weight-bold">Try for Free</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Key benifits and Features End -->
+  
+  <!-- Plan Start -->
+  
+  <div id="plans" class="plans-area plans-bg ">
+    <div class="container">
+        <div class="row pt-5 text-center">
+            <div class="col-12">
+                <h1 class=" plans-title font-weight-bold text-center text-white">Choose your plan</h1>
+                <p class="section-title f-18 font-weight-bold ">Premium plans to suit all implementations.</p>
+            </div>
+        </div>
+        <div class="row pt-5 pb-3 lg-plan">
+            <div class="col-lg-12">
+                <div class="price-plans row">
+                    <div class="price-plans-first-heading panel col-md-4">
+                        <h3 class="panel-heading">
+                        </h3>
+                        <ul class="list-group">
+                            <li class="list-group-item text-light">Call credits</li>
+                            <li class="list-group-item text-light">All standard index and exchanges endpoints</li>
+                            <li class="list-group-item text-light">Daily history</li>
+                            <li class="list-group-item text-light">Hour history</li>
+                            <li class="list-group-item text-light">Minute history</li>
+                            <li class="list-group-item text-light">Tech Support</li>
+                            <li class="list-group-item text-light">Bulk index endpoints</li>
+                            <li class="list-group-item text-light">Bulk exchange endpoints</li>
+                            <li class="list-group-item text-light">Free Data Store Access</li>
+                            <li class="list-group-item text-light">Custom index generation</li>
+                            <li class="list-group-item text-light">Real-time streaming index and exchanges</li>
+                            <li class="list-group-item text-light">Real-time streaming Orders and Trades</li>
+                        </ul>
+                    </div>
+                    <div class="price-plans-inner panel col-sm-6 col-lg-2">
+                        <div class="price-plans-inner-container">
+                            <div class="price-plans-inner-box">
+                                <h3 class="panel-heading">
+                                    <span class="price-plans-label pl-2">Developer</span>
+                                    <div class="price-plans-figure">
+                                        <span class="price-plans-currency">$</span>
+                                        <span class="price-plans-amount">12/mo</span>
+                                    </div>
+                                    <span class="price-plans-foreword">Power your personal projects</span>
+                                </h3>
+                                <div class="price-plans-detail-wrap">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">80k call credits</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">3 months</li>
+                                        <li class="list-group-item">10 days</li>
+                                        <li class="list-group-item">2 hours</li>
+  
+                                        <li class="list-group-item">limited</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+  
+                                    </ul>
+                                    <div class="price-plans-action">
+                                        <a class="btn btn-primary price-plans-action-button" target="_blank"
+                                           href="https://pro.bitcoinaverage.com/pages/auth/register">Sign Up</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-plans-inner panel col-sm-6 col-lg-2">
+                        <div class="price-plans-inner-container">
+                            <div class="price-plans-inner-box">
+                                <h3 class="panel-heading">
+                                    <span class="price-plans-label pl-2">Startup</span>
+                                    <div class="price-plans-figure">
+                                        <span class="price-plans-currency">$</span>
+                                        <span class="price-plans-amount">49/mo</span>
+                                    </div>
+                                    <span class="price-plans-foreword">Develop your MVP</span>
+                                </h3>
+                                <div class="price-plans-detail-wrap">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">500k call credits</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">1 year</li>
+                                        <li class="list-group-item">31 days</li>
+                                        <li class="list-group-item">24 hours</li>
+  
+                                        <li class="list-group-item">basic</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+                                        <li class="list-group-item">-</li>
+  
+                                    </ul>
+                                    <div class="price-plans-action">
+                                        <a class="btn  btn-primary price-plans-action-button" target="_blank"
+                                           href="https://pro.bitcoinaverage.com/pages/auth/register">Sign Up</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-plans-inner panel col-sm-6 col-lg-2">
+                        <div class="price-plans-inner-container">
+                            <div class="price-plans-inner-box">
+                                <h3 class="panel-heading">
+                                    <span class="price-plans-label pl-2">Grow</span>
+                                    <div class="price-plans-figure">
+                                        <span class="price-plans-currency">$</span>
+                                        <span class="price-plans-amount">199/mo</span>
+                                    </div>
+                                    <span class="price-plans-foreword">For growing and Enterprise level applications</span>
+                                </h3>
+                                <div class="price-plans-detail-wrap">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">2M call credits</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">7 years</li>
+                                        <li class="list-group-item">31 days</li>
+                                        <li class="list-group-item">24 hours</li>
+  
+                                        <li class="list-group-item">priority</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">-</li>
+                                    </ul>
+                                    <div class="price-plans-action">
+                                        <a class="btn btn-primary price-plans-action-button" target="_blank"
+                                           href="https://pro.bitcoinaverage.com/pages/auth/register">Sign Up</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-plans-inner panel col-sm-6 col-lg-2">
+                        <div class="price-plans-inner-container">
+                            <div class="price-plans-inner-box">
+                                <h3 class="panel-heading">
+                                    <span class="price-plans-label pl-2">Dominate</span>
+                                    <div class="price-plans-figure">
+                                        <span class="price-plans-currency">$</span>
+                                        <span class="price-plans-amount">599/mo</span>
+                                    </div>
+                                    <span class="price-plans-foreword">Plug into the crypto market in depth</span>
+                                </h3>
+                                <div class="price-plans-detail-wrap">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">5M call credits</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">7 years</li>
+                                        <li class="list-group-item">31 days</li>
+                                        <li class="list-group-item">24 hours</li>
+  
+                                        <li class="list-group-item">premium</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                        <li class="list-group-item">yes</li>
+                                    </ul>
+                                    <div class="price-plans-action">
+                                        <a class="btn btn-primary price-plans-action-button" target="_blank"
+                                           href="https://pro.bitcoinaverage.com/pages/auth/register">Sign Up</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="disclaimer col-md-12 mt-4 text-white">*Subject to fair usage policies and abuse protection</div>
+            </div>
+        </div>
+  
+    </div>
+  </div>
+  
+  <!-- Plan End -->
+  
+  <!-- Testimonial Start -->
+  
+  <div id="testimonial" class="container-fluid ">
+    <div class="pt-5 pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mt-4 mb-3">
+              <h1 class="section-title text-center font-weight-bold">Testimonials</h1>
+              <p class="text-center"> A select few of our many happy clients.</p>
+            </div>
+          </div>
+            <div class="row p-3 border border-dark bg-light">
+                <div class="col-md-3 text-center p-4">
+                  <img class="img-fluid" src="../../../assets/img/brave.png">
+                </div>
+  
+                <div class="col-md-9 pt-4 pb-4">
+                  <div class="border-left-1 pl-2 pr-2 pt-2">
+  
+                    <img class="single-testimonial-profile" src="../../../assets/img/marshall.jpg" alt="Marshall T. Rose">
+                    <h4 class="single-testimonial-title">Marshall T. Rose</h4>
+                    <p class="font-weight-bold single-testimonial-subtitle  text-grey">Senior Software Engineer</p>
+                    <div class="clearfix"></div>
+                    <p class="single-testimonial-paragraph">We use BitcoinAverage to get timely exchange rates for our browser users. we're using
+                        Bitcoin "under the hood" in Brave Payments to allow browser users to contribute to
+                        their favorite publishers. they all want to have accurate exchange information for
+                        their fiat currency, and BitcoinAverage lets us provide that to them.
+                    </p>
+                  </div>
+                </div>
+            </div>
+  
+            <div class="row mt-3 p-3 border border-dark bg-light">
+              <div class="col-md-3 text-center p-4">
+                <img class="img-fluid" src="../../../assets/img/bitsquare.png">
+              </div>
+  
+              <div class="col-md-9 pt-4 pb-4">
+                <div class="border-left-1 pl-2 pr-2 pt-2">
+  
+                  <img class="single-testimonial-profile" src="../../../assets/img/manfred.jpg" alt="Manfred Karrer">
+                  <h4 class="single-testimonial-title">Manfred Karrer</h4>
+                  <p class="font-weight-bold single-testimonial-subtitle  text-grey">Founder, Bitsquare</p>
+                  <div class="clearfix"></div>
+                  <p class="single-testimonial-paragraph">We use BitcoinAverage to get timely exchange rates for our browser users. we're using
+                      Bitcoin "under the hood" in Brave Payments to allow browser users to contribute to
+                      their favorite publishers. they all want to have accurate exchange information for
+                      their fiat currency, and BitcoinAverage lets us provide that to them.
+                  </p>
+                </div>
+              </div>
+          </div>
+  
+  
+          <div class="row p-3 mt-3 border border-dark bg-light">
+            <div class="col-md-3 text-center p-4">
+              <img class="img-fluid" src="../../../assets/img/openbazaar.png">
+            </div>
+  
+            <div class="col-md-9 pt-4 pb-4">
+              <div class="border-left-1 pl-2 pr-2 pt-2 ">
+  
+                <img class="single-testimonial-profile" src="../../../assets/img/sam.jpg" alt="Sam Patterson">
+                <h4 class="single-testimonial-title">Sam Patterson</h4>
+                <p class="font-weight-bold single-testimonial-subtitle  text-grey">Co-Founder, OpenBazaar</p>
+                <div class="clearfix"></div>
+                <p class="single-testimonial-paragraph">Their easy-to-use API enables our users to work in whatever currency they prefer. They provide realtime data with extreme reliability.
+                </p>
+              </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Testimonail End -->
+  
+  <!-- carousel Start -->
+  
+  <div class="container-fluid bg-white mt-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <section class="col-12 solutions-section bg-white">
+          <div class="container">
+            <div class="row">
+                <div class="owl-buttons">
+                  <div class="owl-prev-custom" (click)="onPrev()"></div>
+                </div>
+                <div class="col-12">
+                  <owl-carousel-o  [options]="customOptions">
+              
+                    <ng-template carouselSlide class="item deal-slide"  *ngFor="let image of images;let i = index">
+                      <div class="coupons-div" style="cursor:pointer;">
+                        <img class="deals-image" src="{{image}}" alt="deals"/><br/>
+                      </div>
+                    </ng-template>
+                     
+                  </owl-carousel-o>
+                </div>
+                <div class="owl-buttons">
+                  <div class="owl-next-custom" (click)="onNext()"></div>
+                </div>
+
+            </div>
+            
+          </div>
+        </section>
+        
+      </div>
+    </div>
+  </div>
+  <!-- carousel End -->
+  
+  <!-- parallex Start -->
+  <div class="parallax pt-10 pb-10 pl-3 pr-3">
+    <div class="container">
+      <div class="row">
+          <div class="col-xs-12">
+              <h1 class="section-title font-weight-bold">About Us</h1>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-10 col-xs-12 col-md-8  text-white">
+              <p >BitcoinAverage is the blockchain’s premier source of historical bitcoin price data. In 2013, we
+                  launched the world’s first Bitcoin price index, which has grown to be one of the most respected
+                  and widely cited Bitcoin Price Indices.<br><br>
+                  Starting initially with Bitcoin to USD, EUR, GBP, CAD and PLN price pairs, we have grown our
+                  dataset to now feature over 172 different fiat currencies and over 1440 cryptocurrency markets.
+                  We aggregate real-time bitcoin prices based on order books and transactions on over 50 major
+                  bitcoin exchanges around the world. This allows us to provide, through our long-established
+                  weighted average, bitcoin price data to users in accounting, finance, Bitcoin trading, Bitcoin
+                  mining, as well as to Bitcoin hobbyists.</p>
+          </div>
+      </div>
+  </div>
+  
+  </div>
+  <!-- parallex End -->
+  
+  <!--Solutions Start -->
+  
+  <div class="container-fluid pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mt-4 mb-3">
+          <h1 class="section-title text-center font-weight-bold">Looking for our other Solutions?</h1>
+        </div>
+      </div>
+  
+      <div class="row ">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 p-2  ">
+          <div class=" flip-card pr-2 pl-2">
+            <div class="flip-card-inner ">
+              <div class="rounded bg-light pt-4 flip-card-front border border-primary image-container text-center">
+                <img src="../../../assets/img/feature1.png" alt="White Label" class="rounded">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title  font-weight-bold">White Label </a>
+                </h4>
+                <p class="mb-5 pr-4 pl-4">
+                  Our custom index solution offers the ability for you to decide how the price should be calculated
+                </p>
+              </div>
+  
+              <div class="rounded bg-light pt-4 flip-card-back border border-primary image-container text-center">
+                <img src="../../../assets/img/feature1.png" alt="White Label" class="rounded">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title  font-weight-bold">White Label </a>
+                </h4>
+                <div class="mb-5">
+                  <button class="btn btn-w btn-primary btn-lg">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 p-2  ">
+          <div class=" flip-card pr-2 pl-2">
+            <div class="flip-card-inner ">
+              <div class="rounded bg-light pt-4 flip-card-front border border-primary image-container text-center">
+                <img src="../../../assets/img/feature2.png" alt="Data Store" class="rounded">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title  font-weight-bold">Data Store</a>
+                </h4>
+                <p class="mb-5 pr-4 pl-4">
+                  Historical bitcoin exchange rates at your fingertips for use in accounting, personal taxes and reporting
+                </p>
+              </div>
+  
+              <div class="rounded bg-light pt-4 flip-card-back border border-primary image-container text-center">
+                <img src="../../../assets/img/feature2.png" alt="Data Store" class="rounded">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title  font-weight-bold">Data Store </a>
+                </h4>
+                <div class="mb-5">
+                  <button class="btn btn-w btn-primary btn-lg">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 p-2  ">
+          <div class="flip-card pr-2 pl-2">
+            <div class="flip-card-inner ">
+              <div class="rounded bg-light pt-4 flip-card-front border border-primary image-container text-center">
+                <img src="../../../assets/img/feature3.png" alt="White Label" class="rounded">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title  font-weight-bold">White Label </a>
+                </h4>
+                <p class="mb-5 pr-4 pl-4">
+                  Keep up to date with the market in real-time using our free application
+                </p>
+              </div>
+  
+              <div class="rounded bg-light pt-4 flip-card-back border border-primary image-container text-center">
+                <img src="../../../assets/img/feature3.png" alt="White Label" class="rounded">
+                <h4 class="w-100 text-center mt-3">
+                  <a class="section-title  font-weight-bold">White Label </a>
+                </h4>
+                <div class="mb-5">
+                  <button class="btn btn-w btn-primary btn-lg">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Solutions End -->
+  
+  
+  <!-- Partners Start -->
+  
+  <div id="partners" class="container-fluid "> 
+    <div class="container">
+      <div class="row pt-5 pb-5">
+        <div class="col-md-4 text-center">
+            <button class="btn btn-w btn-primary btn-lg mt-5 mb-3 font-weight-bold">Patners</button>
+        </div>
+        <div class="col-md-8">
+            <h1 class="text-white font-weight-bold section-font-33">Have a partnership opportunity? We would be interested in working with you, so please get in touch!</h1>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- Partners End -->
+  
+  <!-- Questions start -->
+  
+  <div class="container-fluid pt-4 pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="../../../assets/img/contact-img.png" class="img-fluid"/>
+        </div>
+        <div class="col-md-4">
+          <h2 class="text-center font-weight-bold mt-4" >Have any questions?</h2>
+        </div>
+        <div class="col-md-4 text-center">
+          <button class="btn btn-w btn-primary btn-lg mt-4 font-weight-bold">Contact us</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <!-- Questions End -->

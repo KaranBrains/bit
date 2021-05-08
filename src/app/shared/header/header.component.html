@@ -1,0 +1,363 @@
+<div id="new-menu">
+    <div class="menu">
+      <nav class="navbar">
+        <div class="navbar-content">
+          <div class="logo-block">
+            <img src="assets/img/logo-bitcoinaverage-white.png" alt="Logo">
+          </div>
+          <div class="nav-block">
+            <div class="nav-links">
+              <div>
+                <p><a href="http://bitcoinaverage.com">Home</a></p>
+              </div>
+              <div id="crypto_mt">
+                <p>Crypto Markets</p>
+              </div>
+              <div id="data_mt">
+                <p>Data</p>
+              </div>
+              <div id="api_mt">
+                <p>API</p>
+              </div>
+              <div>
+                <p>
+                  <a href="https://bitcoinaverage.com/blog/" target="_blank">Blog</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="auth-actions">
+            <div class="login">
+              <a href="http://pro.bitcoinaverage.com/login">Login</a>
+            </div>
+            <div class="signup">
+              <button (click)="redirectRegister()">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="sub-menu">
+        <div class="crypto-markets">
+          <div class="sub-menu-links">
+            <div class="crypto-market-items">
+              <div class="is-active" (click)="redirectHome()">
+                <p>
+                  Markets
+                </p>
+              </div>
+              <div class="dropdown">
+                <span><img src="assets/img/menu/shape.png" alt="Shape"></span>
+                <input id="search-coins" type="search" placeholder="Search coins" [(ngModel)]="searchText"
+                       [ngModelOptions]="{updateOn: 'change'}" id="searchText" name="searchText" data-toggle="dropdown"
+                       aria-haspopup="true">
+                <div class="dropdown-menu sub-sub-menu-search-coins" aria-labelledby="search-dropdown">
+                  <div class="search-coin">
+                    <ng-template ngFor let-row [ngForOf]="coins | filter: searchText: 'Object'" let-i="index"
+                                 let-isEven="even" let-isOdd="odd" let-isFirst="first" let-isLast="last">
+                      <div class="fx-2 coin" (click)="redirect(row.short,'USD','fiat')">
+                        <div class="fx-2-20"><span><img src="assets/img/logo/32/{{row.image}}"
+                                                        alt="logo"></span></div>
+                        <div class="fx-2-1">{{row.full}}</div>
+                      </div>
+                    </ng-template>
+                    <a class="fx-2" *ngIf="(coins | filter: searchText : 'Object').length === 0">
+                      No Result Found
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div id="popular-coins">
+                <p>Popular Coins
+                  <span><img src="assets/img/menu/arrow.png" alt="Arrow"></span>
+                </p>
+                <div class="sub-sub-menu-popular-coins">
+                  <div class="fx-2">
+                    <div *ngFor="let coin of topCoinsFirst" class="fx-2-1"
+                         (click)="redirect(coin.short, 'USD', 'global')">
+                      <div class="dx-2">
+                        <div class="fx-2-1"><span><img src="assets/img/logo/32/{{coin.short}}.png"></span></div>
+                        <div class="fx-2-1">{{coin.short}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fx-2">
+                    <div *ngFor="let coin of topCoinsSecond" class="fx-2-1"
+                         (click)="redirect(coin.short, 'USD', 'global')">
+                      <div class="dx-2">
+                        <div class="fx-2-1"><span><img src="assets/img/logo/32/{{coin.short}}.png"></span></div>
+                        <div class="fx-2-1">{{coin.short}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="global-indices">
+                <p>Global Indices
+                  <span><img src="assets/img/menu/arrow.png" alt="Arrow"></span>
+                </p>
+                <div class="sub-sub-menu-global-indices">
+                  <div>
+                    <a href="https://bitcoinaverage.com/en/bitcoin-price/btc-to-usd">
+                      <div class="fx-2">
+                        <div class="fx-2-20"><span><img src="assets/img/logo/32/BTC.png"
+                                                        alt="Bitcoin"></span></div>
+                        <div class="fx-2-1">Bitcoin Price</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://bitcoinaverage.com/en/ethereum-price/eth-to-usd">
+                      <div class="fx-2">
+                        <div class="fx-2-20"><span><img src="assets/img/logo/32/ETH.png"
+                                                        alt="Ethereum"></span></div>
+                        <div class="fx-2-1">Ethereum Price</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://bitcoinaverage.com/en/comparisons">
+                      <div class="fx-2">
+                        <div class="fx-2-20"><span><img src="assets/img/menu/icon_graph.png" alt="Graph"></span>
+                        </div>
+                        <div class="fx-2-1">Digital Asset Comparisons</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-data">
+          <div class="sub-menu-links">
+            <div class="data-items">
+              <div>
+                <a
+                  href="https://bitcoinaverage.com/en/data-store/historical-bitcoin-exchange-rates">
+                  <p>Data store</p>
+                </a></div>
+              <div>
+                <a href="https://bitcoinaverage.com/en/widgets/price">
+                  <p>Widgets</p>
+                </a>
+              </div>
+              <div>
+                <a href="https://bitcoinaverage.com/en/transaction-calculator">
+                  <p>Transaction Calc</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-api">
+          <div class="sub-menu-links">
+            <div class="api-items">
+              <div>
+                <a href="https://apiv2.bitcoinaverage.com">
+                  <p>Documentation</p>
+                </a>
+              </div>
+              <div>
+                <a href="https://bitcoinaverage.com/en/methodology">
+                  <p>Methodology</p>
+                </a>
+              </div>
+              <div>
+                <a href="https://bitcoinaverage.com/en/api-faq">
+                  <p>API FAQ</p>
+                </a>
+              </div>
+              <div>
+                <a href="https://bitcoinaverage.com/en/api-collections">
+                  <p>Collections</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-mobile">
+      <div class="menu-header">
+        <div class="logo-panel"><img src="assets/img/logo-bitcoinaverage-white.png" alt="Logo"></div>
+        <div id="bulk_menu" class="bulk-menu"><img class="f-right" src="assets/img/menu/icon_menu.png" alt="Bulk"></div>
+      </div>
+      <div class="navigation-bar">
+        <div class="home">
+          <div class="fx-2">
+            <div class="fx-2-1 pd-15"><a href="http://bitcoinaverage.com">Home</a></div>
+            <div class="fx-2-1 pd-10">
+              <div class="nav-signup f-right">
+                <button (click)="redirectRegister()">Sign Up</button>
+              </div>
+              <div class="nav-login f-right">
+                <a href="http://pro.bitcoinaverage.com/login">Login</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="open-crypto-mb" class="cryptomarket">
+          <div class="fx-2">
+            <div class="fx-2-1 pd-15">Crypto Markets</div>
+            <div class="fx-2-1 pd-15"><span class="f-right"><img id="crypto_arrow" src="assets/img/menu/arrow.png"
+                                                                 alt="Arrow"></span></div>
+          </div>
+          <div class="crypto-area">
+            <div class="crypto-actions">
+              <div (click)="redirectHome()">Markets</div>
+              <div class="dropdown">
+                <span><img src="assets/img/menu/shape.png" alt="Shape"></span>
+                <input autocomplete="off" id="search-coins-mobile" type="search" placeholder="Search coins" [(ngModel)]="searchText"
+                       [ngModelOptions]="{updateOn: 'change'}" id="searchTextMobile" name="searchText" data-toggle="dropdown"
+                       aria-haspopup="true">
+                <div class="dropdown-menu sub-sub-menu-search-coins" aria-labelledby="search-dropdown">
+                  <div class="search-coin">
+                    <ng-template ngFor let-row [ngForOf]="coins | filter: searchText: 'Object'" let-i="index"
+                                 let-isEven="even" let-isOdd="odd" let-isFirst="first" let-isLast="last">
+                      <div class="fx-2 coin" (click)="redirect(row.short,'USD','fiat')">
+                        <div class="fx-2-20"><span><img src="assets/img/logo/32/{{row.image}}"
+                                                        alt="logo"></span></div>
+                        <div class="fx-2-1">{{row.full}}</div>
+                      </div>
+                    </ng-template>
+                    <a class="fx-2" *ngIf="(coins | filter: searchText : 'Object').length === 0">
+                      No Result Found
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div id="glb-indices" class="fx-2">
+                  <div class="fx-2-1">Global Indices</div>
+                  <div class="arr-icon-fx"><span class="f-right"><img id="glb_arrow" src="assets/img/menu/arrow.png"
+                                                                      alt="Arrow"></span></div>
+                </div>
+                <div class="global-idc-content">
+                  <div>
+                    <a href="https://bitcoinaverage.com/en/bitcoin-price/btc-to-usd">
+                      <div class="fx-2">
+                        <div class="fx-2-20"><span><img src="assets/img/logo/32/BTC.png" alt="Bitcoin"></span></div>
+                        <div class="fx-2-1">Bitcoin Price</div>
+                      </div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://bitcoinaverage.com/en/ethereum-price/eth-to-usd">
+                    <div class="fx-2">
+                      <div class="fx-2-20"><span><img src="assets/img/logo/32/ETH.png" alt="Ethereum"></span></div>
+                      <div class="fx-2-1">Ethereum Price</div>
+                    </div>
+                    </a>
+                  </div>
+                  <div>
+                    <a href="https://bitcoinaverage.com/en/comparisons">
+                    <div class="fx-2">
+                      <div class="fx-2-20"><span><img src="assets/img/menu/icon_graph.png" alt="Graph"></span></div>
+                      <div class="fx-2-1">Digital Asset Comparisons</div>
+                    </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div id="pop-coins" class="fx-2">
+                  <div class="fx-2-1">Popular Coins</div>
+                  <div class="arr-icon-fx"><span class="f-right"><img id="pop_arrow" src="assets/img/menu/arrow.png"
+                                                                      alt="Arrow"></span></div>
+                </div>
+                <div class="popular-cns-content">
+                  <div class="fx-2">
+                    <div *ngFor="let coin of topCoinsFirst" class="fx-2-1"
+                         (click)="redirect(coin.short, 'USD', 'global')">
+                      <div class="dx-2">
+                        <div class="fx-2-1"><span><img src="assets/img/logo/32/{{coin.short}}.png"></span></div>
+                        <div class="fx-2-1">{{coin.short}}</div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="fx-2">
+                    <div *ngFor="let coin of topCoinsSecond" class="fx-2-1"
+                         (click)="redirect(coin.short, 'USD', 'global')">
+                      <div class="dx-2">
+                        <div class="fx-2-1"><span><img src="assets/img/logo/32/{{coin.short}}.png"></span></div>
+                        <div class="fx-2-1">{{coin.short}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="data">
+          <div id="data-mb-ct" class="fx-2">
+            <div class="fx-2-1 pd-15">Data</div>
+            <div class="fx-2-1 pd-15"><span class="f-right"><img id="data_arrow" src="assets/img/menu/arrow.png"
+                                                                 alt="Arrow"></span></div>
+          </div>
+          <div class="data-links-nav">
+            <div>
+              <div class="data-links-items">
+                <div>
+                  <a
+                    href="https://bitcoinaverage.com/en/data-store/historical-bitcoin-exchange-rates">
+                    <p>Data store</p>
+                  </a>
+                </div>
+                <div>
+                  <a href="https://bitcoinaverage.com/en/widgets/price">
+                    <p>Widgets</p>
+                  </a>
+                </div>
+                <div><a href="https://bitcoinaverage.com/en/transaction-calculator">
+                  <p>Transaction Calc</p>
+                </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="api">
+          <div id="api-mb-ct" class="fx-2">
+            <div class="fx-2-1 pd-15">API</div>
+            <div class="fx-2-1 pd-15"><span class="f-right"><img id="api_arrow" src="assets/img/menu/arrow.png"
+                                                                 alt="Arrow"></span></div>
+          </div>
+          <div class="api-links-nav">
+            <div>
+              <div class="api-links-items">
+                <div>
+                  <a href="https://apiv2.bitcoinaverage.com">
+                    <p>Documentation</p>
+                  </a>
+                </div>
+                <div>
+                  <a href="https://bitcoinaverage.com/en/methodology">
+                    <p>Methodology</p>
+                  </a>
+                </div>
+                <div>
+                  <a href="https://bitcoinaverage.com/en/api-faq">
+                    <p>API FAQ</p>
+                  </a>
+                </div>
+                <div>
+                  <a href="https://bitcoinaverage.com/en/api-collections">
+                    <p>Collections</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="fx-2">
+            <div class="fx-2-1 pd-15">
+              <a href="https://bitcoinaverage.com/blog/" target="_blank">Blog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

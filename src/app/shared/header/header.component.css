@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+
+
+#new-menu {
+  margin: 0;
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  position: relative;
+  width: 100%;
+  /* min-height: 96px; */
+  left: 0px;
+  top: 0px;
+}
+
+
+/*extra*/
+
+#new-menu .nav-links > div > p{
+  padding: 0;
+  margin: 1rem 0;
+}
+
+#new-menu .sub-menu-links p {
+  padding: 0;
+  margin: 1rem 0;
+}
+
+#new-menu .fx-2-20 img{
+  width: 20px;
+}
+
+#new-menu .sub-sub-menu-global-indices > div:hover{
+  background: #43506D;
+  cursor: pointer;
+}
+
+#new-menu .sub-sub-menu-popular-coins .fx-2-1:hover{
+  background: #43506D;
+  cursor: pointer;
+}
+
+#new-menu .sub-sub-menu-search-coins {
+  position: absolute;
+  flex-direction: column;
+  top: 50px;
+  left: 15px;
+  width: 253px;
+  height: 173px;
+  background: #323E54;
+  box-shadow: 0px 0px 40px rgba(26, 33, 48, 0.15);
+  border-radius: 4px;
+  text-align: left;
+}
+
+#new-menu .sub-sub-menu-search-coins > div {
+  flex: 1;
+  padding: 12px 0 0 15px;
+}
+
+#new-menu .sub-sub-menu-popular-coins img{
+  width: 20px;
+}
+
+#new-menu .sub-sub-menu-search-coins .fx-2.coin{
+  margin: 0.5rem 0;
+  border-bottom: 1px solid gray;
+}
+
+#new-menu .sub-sub-menu-search-coins .fx-2.coin:hover{
+  background: #43506D;
+}
+
+#new-menu input{
+  color: #FFFFFF;
+}
+
+#new-menu input:focus{
+  outline: none;
+}
+
+#new-menu a{
+  color: white;
+}
+
+#new-menu a:hover{
+  text-decoration: none;
+}
+
+/*end extra*/
+
+#new-menu .menu {
+  position: relative;
+  width: 100%;
+  min-height: 96px;
+  left: 0px;
+  top: 0px;
+}
+
+#new-menu .navbar {
+  display: block;
+  position: absolute;
+  height: 50%;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: #323E54;
+  padding: 0;
+}
+
+#new-menu .sub-menu {
+  display: none;
+  position: absolute;
+  height: 50%;
+  left: 0%;
+  right: 0%;
+  top: 50%;
+  bottom: 0%;
+  background: #43506D;
+  border-radius: 0px 0px 8px 8px;
+}
+
+#new-menu .navbar-content {
+  display: flex;
+  max-height: 48px;
+}
+
+#new-menu .navbar-content > div {
+  flex: 1;
+}
+
+#new-menu .logo-block > img {
+  background-repeat: no-repeat;
+  margin: 12px 0 12px 135px;
+}
+
+#new-menu .nav-links {
+  height: 100%;
+  list-style: none;
+}
+
+#new-menu .auth-actions {
+  display: flex;
+}
+
+#new-menu .login,
+#new-menu .signup {
+  flex: 1;
+}
+
+#new-menu .login > a {
+  float: right;
+  text-decoration: none;
+  margin: 13px 6px 0 0;
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+#new-menu .signup > button {
+  float: left;
+  width: 80px;
+  height: 32px;
+  background: #4A90E2;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  margin: 6px 0 0 6px;
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+#new-menu .nav-links {
+  display: flex;
+}
+
+#new-menu .nav-links > div {
+  text-align: center;
+  width: 130px
+}
+
+#new-menu .nav-links > div:nth-child(2) {
+  /*flex: 0.4;*/
+  width: 170px !important
+}
+
+#new-menu .nav-links > div:hover {
+  background: #43506D;
+  cursor: pointer;
+  line-height: 8px;
+  border-top: 8px solid #323E54;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+#new-menu .active {
+  background: #43506D;
+  line-height: 8px;
+  border-top: 8px solid #323E54;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+#new-menu .crypto-markets {
+  display: none;
+}
+
+#new-menu .sub-menu-links {
+  min-height: 48px;
+  margin-left: 135px;
+}
+
+#new-menu .crypto-market-items,
+#new-menu .data-items,
+#new-menu .api-items {
+  display: flex;
+}
+
+#new-menu .crypto-market-items > div,
+#new-menu .data-items > div,
+#new-menu .api-items > div {
+  cursor: pointer;
+}
+
+#new-menu .data-items > div,
+#new-menu .api-items > div {
+  margin-left: 65px
+}
+
+#new-menu .data-items > div:nth-child(1) {
+  margin-left: 0 !important;
+}
+
+#new-menu .api-items > div:nth-child(1) {
+  margin-left: 0 !important;
+}
+
+#new-menu .crypto-market-items > div:nth-child(1) {
+  text-align: center;
+  height: 45px;
+}
+
+.sub-sub-menu-search-coins {
+    left: -32px !important;
+    color:white;
+    overflow: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  #new-menu .nav-links > div {
+    width: 75px
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+    #new-menu .crypto-market-items > div:nth-child(2),
+    #new-menu .crypto-actions > div:nth-child(2) {
+
+      margin-left: 0px !important;
+    }   
+}
+  
+#new-menu .crypto-market-items > div:nth-child(2) {
+  width: 200px;
+  height: 32px;
+  background: #323E54;
+  border-radius: 4px;
+}
+
+#new-menu .crypto-actions > div:nth-child(2) {
+  max-width: 240px;
+  max-height: 40px;
+  background: #43506D;
+}
+
+#new-menu .crypto-market-items > div:nth-child(2),
+#new-menu .crypto-actions > div:nth-child(2) {
+  display: flex;
+  margin: 8px;
+  margin-left: 65px;
+}
+
+#new-menu .crypto-market-items > div:nth-child(2) > span > img,
+#new-menu .crypto-actions > div:nth-child(2) > span > img {
+  margin: 9px;
+}
+
+#new-menu .crypto-market-items > div:nth-child(2) > input::-webkit-input-placeholder,
+#new-menu .crypto-actions > div:nth-child(2) > input::-webkit-input-placeholder {
+  color: #525C6E;
+}
+
+#new-menu .crypto-actions > div:nth-child(2) > input {
+  max-width: 80%;
+  background: #43506D;
+  border: 0;
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  mix-blend-mode: normal;
+}
+
+#new-menu .crypto-market-items > div:nth-child(2) > input {
+  max-width: 80%;
+  max-height: 32px;
+  background: #323E54;
+  border: 0;
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  mix-blend-mode: normal;
+}
+
+#new-menu .crypto-market-items > div:nth-child(3) {
+  text-align: center;
+  margin: 0 36px;
+  width: 150px;
+  position: relative;
+}
+#new-menu .crypto-market-items > div:nth-child(4) {
+  width: 150px;
+  position: relative;
+}
+#new-menu .crypto-market-items > div:nth-child(3) > p > span > img {
+  padding: 0 0 3px 7px;
+}
+
+#new-menu .menu-mobile {
+  display: none;
+  position: relative;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+#new-menu .menu-header {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 48px;
+  background: #323E54;
+}
+
+#new-menu .logo-panel {
+  flex: 1;
+  margin: 10px;
+}
+
+#new-menu .bulk-menu {
+  flex: 1;
+  margin: 15px;
+}
+
+#new-menu .f-right {
+  float: right;
+}
+
+#new-menu .navigation-bar {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  top: 48px;
+  width: 100%;
+  height: auto;
+  background: #43506D;
+  z-index: 99;
+}
+
+#new-menu .navigation-bar > div {
+  flex: 1;
+  border-bottom: 1px solid #323E54;
+}
+
+#new-menu .fx-2 {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#new-menu .fx-2-1 {
+  flex: 1;
+  padding-top: 3px;
+}
+
+#new-menu .fx-2-20 {
+  flex: 0.13;
+}
+
+#new-menu .dx-2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#new-menu .pd-10 {
+  padding: 10px;
+}
+
+#new-menu .pd-15 {
+  padding: 15px;
+}
+
+#new-menu .nav-login {
+  margin: 6px;
+}
+
+#new-menu .nav-login > a {
+  text-decoration: none;
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+#new-menu .nav-signup > button {
+  width: 80px;
+  height: 32px;
+  background: #4A90E2;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+#new-menu .sub-sub-menu-global-indices {
+  z-index: 99;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  top: 50px;
+  left: 0;
+  width: 253px;
+  height: 134px;
+  background: #323E54;
+  box-shadow: 0px 0px 40px rgba(26, 33, 48, 0.15);
+  border-radius: 4px;
+  text-align: left;
+}
+
+#new-menu .sub-sub-menu-global-indices > div {
+  flex: 1;
+  padding: 12px 0 0 15px;
+}
+
+#new-menu .sub-sub-menu-popular-coins {
+  z-index: 99;
+  position: absolute;
+  text-align: center;
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  display: none;
+  flex-direction: column;
+  top: 50px;
+  left: 8px;
+  width: 300px;
+  height: 154px;
+  background: #323E54;
+  box-shadow: 0px 0px 40px rgba(26, 33, 48, 0.15);
+  border-radius: 4px;
+}
+
+#new-menu .sub-sub-menu-popular-coins > div {
+  margin-top: 15px;
+}
+
+#new-menu .menu-data,
+#new-menu .menu-api {
+  display: none;
+}
+
+#new-menu .crypto-area {
+  display: none;
+  width: 100%;
+  height: auto;
+  background: #323E54;
+}
+
+#new-menu .crypto-actions {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  background: #323E54;
+}
+
+#new-menu .crypto-actions > div {
+  flex: 1;
+  margin: 15px;
+}
+
+#new-menu .arr-icon-fx {
+  flex: 0.2;
+}
+
+#new-menu .global-idc-content {
+  display: none;
+  width: 95%;
+  height: 100px;
+  margin: auto;
+}
+
+#new-menu .global-idc-content > div {
+  margin: 15px;
+}
+
+#new-menu .popular-cns-content {
+  display: none;
+  flex-direction: column;
+  width: 95%;
+  height: 120px;
+  margin: auto;
+}
+
+#new-menu .popular-cns-content > div {
+  margin: 10px 0 0 10px;
+}
+
+#new-menu .data-links-nav,
+#new-menu .api-links-nav {
+  display: none;
+  width: 100%;
+  height: auto;
+  background: #323E54;
+}
+
+#new-menu .data-links-nav > div,
+#new-menu .api-links-nav > div {
+  width: 85%;
+  margin: auto;
+}
+
+#new-menu .data-links-items,
+#new-menu .api-links-items {
+  display: flex;
+  flex-direction: column;
+}
+
+#new-menu .data-links-items > div,
+#new-menu .api-links-items > div {
+  flex: 1;
+  height: 30px;
+}
+
+@media screen and (max-width: 312px) {
+  #new-menu .pd-10 {
+    flex: 2;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #new-menu .menu {
+    display: none;
+  }
+
+  #new-menu .menu-mobile {
+    display: block;
+  }
+
+  #new-menu .crypto-actions > div:nth-child(2) > span > img {
+    margin: 13px 9px !important
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  #new-menu .auth-actions {
+    flex: 0.7;
+  }
+}
+
+@media screen and (max-width: 1063px) and (min-width: 768px) {
+  #new-menu .menu {
+    display: block;
+  }
+
+  #new-menu .menu-mobile {
+    display: none;
+  }
+
+  #new-menu .logo-block > img,
+  #new-menu .sub-menu-links {
+    margin-left: 35px;
+  }
+
+  #new-menu .nav-links {
+    padding-left: 25px;
+  }
+
+  #new-menu .nav-links > div {
+    width: 65px
+  }
+
+  #new-menu .nav-links > div:nth-child(2) {
+    width: 150px !important
+  }
+}
+
+@media screen and (max-width: 850px) and (min-width: 768px) {
+  #new-menu .sub-sub-menu-popular-coins {
+    left: -111px
+  }
+}

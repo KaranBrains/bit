@@ -1,0 +1,94 @@
+footer {
+    background: #1a2130 none repeat scroll 0 0;
+}
+
+
+footer {
+    background-color: #1a212f;
+    padding: 57px 0 0
+  }
+  
+  footer h3 {
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: 19px;
+    margin-bottom: 22.8px
+  }
+  
+  footer input.form-control, footer input.form-control:active, footer input.form-control:focus {
+    background-color: #373f50;
+    border: 0;
+    color: #fff
+  }
+  
+  footer a {
+    color: #d8d8d8
+  }
+  
+  footer a:hover {
+    color: #4a90e2;
+    text-decoration: none
+  }
+  
+  footer .footer-menu-section {
+    padding-bottom: 38px
+  }
+  
+  footer .social-links {
+    margin: 19px 0 38px
+  }
+  
+  footer .social-links .nav-item {
+    margin-right: 9.5px
+  }
+  
+  footer .social-links .nav-link {
+    border-radius: 50%;
+    color: #d8d8d8;
+    height: 22.8px;
+    line-height: 22.8px;
+    padding: 0;
+    text-align: center;
+    width: 22.8px
+  }
+  
+  footer .social-links .nav-link:hover {
+    color: #4a90e2
+  }
+  
+  footer .social-links i {
+    font-size: .875rem;
+    vertical-align: middle
+  }
+  
+  footer .footer-menu .nav-link {
+    font-size: .75075rem;
+    line-height: 22.8px;
+    padding: 0
+  }
+  
+  footer .sign-up-text {
+    font-weight: 700
+  }
+  
+  footer .copyright-section {
+    background-color: #373f50;
+    font-size: .75075rem;
+    min-height: 57px;
+    padding: 19px 0;
+    text-align: center
+  }
+  
+  footer .copyright-section a {
+    text-decoration: underline
+  }
+  
+  footer .copyright-section .font-weight-bold {
+    color: #fff
+  }
+  
+  
+
+  .social-links {
+    justify-content: center;
+  }

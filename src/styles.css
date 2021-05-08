@@ -1,0 +1,202 @@
+
+
+/* You can add global styles to this file, and also import other style files */
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+
+
+body {
+   font-family: 'Fira Sans' !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+
+.btn-primary {
+  background-color: #4a90e2 !important;
+  border-color: #4a90e2 !important;
+  color: #fff !important;
+}
+
+
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1
+}
+
+.owl-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+  -moz-backface-visibility: hidden
+}
+
+.owl-carousel .owl-stage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0
+}
+
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0)
+}
+
+.owl-carousel .owl-item, .owl-carousel .owl-wrapper {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0)
+}
+
+.owl-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%
+}
+
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
+  display: none
+}
+
+.owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev {
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.owl-carousel.owl-loaded {
+  display: block
+}
+
+.owl-carousel.owl-loading {
+  opacity: 0;
+  display: block
+}
+
+.owl-carousel.owl-hidden {
+  opacity: 0
+}
+
+.owl-carousel.owl-refresh .owl-item {
+  visibility: hidden
+}
+
+.owl-carousel.owl-drag .owl-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.owl-carousel.owl-grab {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab
+}
+
+.owl-carousel.owl-rtl {
+  direction: rtl
+}
+
+.owl-carousel.owl-rtl .owl-item {
+  float: right
+}
+
+.no-js .owl-carousel {
+  display: block
+}
+
+.owl-carousel .animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
+.owl-carousel .owl-animated-in {
+  z-index: 0
+}
+
+.owl-carousel .owl-animated-out {
+  z-index: 1
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+
+.owl-carousel .owl-item img {
+  height: 60px;
+  max-width: 150px;
+  margin-left: auto;
+    margin-right: auto;
+    display: inline;
+
+}
+
+.owl-buttons div.owl-next-custom{
+  right: 0px;
+  background: url(./assets/img/menu/partnerarrr.png) no-repeat center center;
+  left: auto;
+}
+
+ .owl-buttons div {
+  background: url(./assets/img/menu/partnerarrl.png) no-repeat center center;
+  display: inline-block;
+  font-size: 12px;
+  height: 34px;
+  left: 0px;
+  margin: -30px 0 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  width: 13px;
+}
+
+.owl-nav {
+  height: 0px;
+  overflow: hidden;
+}
+
+.text-light {
+  color: #d8d8d8 !important;
+}
