@@ -1,6 +1,7 @@
 .main-market{
     background: url("../../../assets//img/bg.jpg") no-repeat top;
     background-color: #1a212f;
+    background-size: 100%;
 }
 
 .market_table{
