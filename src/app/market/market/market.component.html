@@ -1,74 +1,74 @@
 <div class=" main-market">
     <div class="container">
-        <div style="text-align:center; padding: 38px 2px; color:#ffffff">
-            <h1 style="margin-top:38px; font-size:24px">Real-time Cryptocurrency Exchange Rates by Market Capitalization</h1>
-            <h2 style="margin-top:38px; font-size:18px">Check aggregated crypto price data for for the top 50, including Bitcoin & Ethereum</h2>
-            <a href="#" style="margin:38px 0px 57px; font-size:20px; padding:0 38px; line-height:57px" class="btn btn-primary main-btn">Consume via API</a>
+        <div class="main-header">
+            <h1 class="heading-1">Real-time Cryptocurrency Exchange Rates by Market Capitalization</h1>
+            <h2 class="heading-2">Check aggregated crypto price data for for the top 50, including Bitcoin & Ethereum</h2>
+            <a href="#" class="consume-btn btn btn-primary main-btn">Consume via API</a>
         </div>
         <table class="table main-table table-responsive table-borderless market_table">
                <thead></thead>
                <tbody>
                 <tr style="background-color: #42506d;margin:10px 0px; color:#fff; padding: 8px 8px 8px 20px;" class="d-flex justify-content-between align-items-center">
-                    <td style="width:6%"></td>
-                    <td  style="width:9%" class="d-flex flex-row align-items-center justify-content-start">
-                        <div style="padding:0px">CRYPTO</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                    <td class="td-m-10" style="width:6%;"></td>
+                    <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
+                        <div>CRYPTO</div>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td  style="width:8%" class="d-flex flex-row align-items-center justify-content-start">
-                        <div style="padding:0px">LAST</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                    <td  style="width:8%;" class="d-flex flex-row align-items-center justify-content-start">
+                        <div>LAST</div>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td  style="width:8%" class="d-flex flex-row align-items-center justify-content-start">
-                        <div style="padding:0px">BID</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                    <td  style="width:8%;" class="d-flex flex-row align-items-center justify-content-start">
+                        <div>BID</div>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td  style="width:9%" class="d-flex flex-row align-items-center justify-content-start">
-                        <div style="padding:0px">ASK</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                    <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
+                        <div>ASK</div>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td  style="width:9%" class="d-flex flex-row align-items-center justify-content-start">
-                        <div style="padding:0px">HIGH</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                    <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
+                        <div>HIGH</div>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td  style="width:9%" class="d-flex flex-row align-items-center justify-content-start">
+                    <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
                         <div>LOW</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td  style="width:16%" class="d-flex flex-row align-items-center justify-content-start">
-                        <div style="padding:0px">MKTCAP</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                    <td  style="width:16%;" class="d-flex flex-row align-items-center justify-content-start">
+                        <div>MKTCAP</div>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td  style="width:16%" class="d-flex flex-row align-items-center justify-content-start">
-                        <div style="padding:0px">VOL</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                    <td  style="width:16%;" class="d-flex flex-row align-items-center justify-content-start">
+                        <div>VOL</div>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td  style="width:4%" class="d-flex flex-row align-items-center justify-content-start">
-                        <div style="padding:0px">CHANGE</div>
-                        <i style="padding: 0 5px;font-size:14px; color:#d8d8d8;" class="fas fa-sort"></i>
+                    <td  style="width:4%;" class="d-flex flex-row align-items-center justify-content-start">
+                        <div>CHANGE</div>
+                        <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td style="width:2%"></td>
-                    <td style="width:3%"><i class="fas fa-plus"></i></td>
+                    <td style="width:2%;"></td>
+                    <td style="width:3%;"><i class="fas fa-plus"></i></td>
                 </tr>
             <div *ngFor="let marketData of marketData ; let i = index">
-                <tr *ngIf="i%2==0" style="background-color: #42506d; width: 1285px !important" class="d-flex justify-content-between align-items-center" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
-                    <td class="crypto-logo" style="width:6%;padding: 0;margin:10px"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
-                    <td class="crypto-name" style="width:9%;padding: 0;margin:10px"><b>{{marketData.crpto}}</b></td>
-                    <td style="width:8%;padding: 0;margin:10px">{{marketData.last}}</td>
-                    <td style="width:8%;padding: 0;margin:10px">{{marketData.bid}}</td>
-                    <td style="width:9%;padding: 0;margin:10px">{{marketData.ask}}</td>
-                    <td style="width:9%;padding: 0;margin:10px">{{marketData.high}}</td>
-                    <td style="width:9%;padding: 0;margin:10px">{{marketData.low}}</td>
-                    <td style="width:16%;padding: 0;margin:10px">{{marketData.mktcap}}</td>
-                    <td style="width:16%;padding: 0;margin:10px">{{marketData.vol}}</td>
-                    <td style="width:4%;padding: 0;margin:10px">{{marketData.change}}</td>
-                    <td style="width:2%;padding: 0;margin:10px"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;padding: 0;margin:10px"><i class="fas fa-plus" [attr.id]="'abc'+i" (click)="toggleIcon(i)"></i><i [attr.id]="'abcd'+i" (click)="toggleIcon(i)" class="fas fa-minus hidden"></i> </td>
+                <tr *ngIf="i%2==0" style="background-color: #42506d; width: 1296px !important" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
+                    <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
+                    <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
+                    <td style="width:8%;">{{marketData.last}}</td>
+                    <td style="width:8%;">{{marketData.bid}}</td>
+                    <td style="width:9%;">{{marketData.ask}}</td>
+                    <td style="width:9%;">{{marketData.high}}</td>
+                    <td style="width:9%;">{{marketData.low}}</td>
+                    <td style="width:16%;">{{marketData.mktcap}}</td>
+                    <td style="width:16%;">{{marketData.vol}}</td>
+                    <td style="width:4%;">{{marketData.change}}</td>
+                    <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
+                    <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i" (click)="toggleIcon(i)"></i><i [attr.id]="'abcd'+i" (click)="toggleIcon(i)" class="fas fa-minus hidden"></i> </td>
                 </tr>
                 <div *ngIf="i%2==0" style="background-color: #42506d;" class="collapse out" [attr.id]="marketData.id">
                    <div style="margin-left: 6%; padding:10px 10px 10px 30px" class="d-flex flex-column" > 
                       <div style="padding-top:10px; padding-bottom:20px">{{marketData.about}}</div>
-                      <div class="d-flex flex-row justify-content-between align-items-center">
-                        <div  class="d-flex flex-row">
+                      <div class="d-flex flex-row justify-content-start align-items-center">
+                        <div class="d-flex flex-row width-25">
                             <div style="padding-right:10px">
                                 <img src="assets/img/coins.svg" class="param-icon" alt="">
                             </div>
@@ -77,7 +77,7 @@
                                 <div>Total {{marketData.crpto}}s</div>
                             </div>
                         </div>
-                        <div  class="d-flex flex-row">
+                        <div class="d-flex flex-row width-25">
                             <div style="padding-right:10px">
                                 <img src="assets/img/business.svg" class="param-icon" alt="">
                             </div>
@@ -90,25 +90,25 @@
                       </div>
                    </div>
                 </div>
-                <tr *ngIf="i%2!=0" style="background-color: #323e54;" class="d-flex justify-content-between align-items-center" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
-                    <td class="crypto-logo" style="width:6%;padding: 0;margin:10px"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
-                    <td class="crypto-name" style="width:9%;padding: 0;margin:10px"><b>{{marketData.crpto}}</b></td>
-                    <td style="width:8%;padding: 0;margin:10px">{{marketData.last}}</td>
-                    <td style="width:8%;padding: 0;margin:10px">{{marketData.bid}}</td>
-                    <td style="width:9%;padding: 0;margin:10px">{{marketData.ask}}</td>
-                    <td style="width:9%;padding: 0;margin:10px">{{marketData.high}}</td>
-                    <td style="width:9%;padding: 0;margin:10px">{{marketData.low}}</td>
-                    <td style="width:16%;padding: 0;margin:10px">{{marketData.mktcap}}</td>
-                    <td style="width:16%;padding: 0;margin:10px">{{marketData.vol}}</td>
-                    <td style="width:4%;padding: 0;margin:10px">{{marketData.change}}</td>
-                    <td style="width:2%;padding: 0;margin:10px"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;padding: 0;margin:10px"><i class="fas fa-plus"></i></td>
+                <tr *ngIf="i%2!=0" style="background-color: #323e54;" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
+                    <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
+                    <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
+                    <td style="width:8%;">{{marketData.last}}</td>
+                    <td style="width:8%;">{{marketData.bid}}</td>
+                    <td style="width:9%;">{{marketData.ask}}</td>
+                    <td style="width:9%;">{{marketData.high}}</td>
+                    <td style="width:9%;">{{marketData.low}}</td>
+                    <td style="width:16%;">{{marketData.mktcap}}</td>
+                    <td style="width:16%;">{{marketData.vol}}</td>
+                    <td style="width:4%;">{{marketData.change}}</td>
+                    <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
+                    <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i" (click)="toggleIcon(i)"></i><i [attr.id]="'abcd'+i" (click)="toggleIcon(i)" class="fas fa-minus hidden"></i> </td>
                 </tr>
                 <div *ngIf="i%2!=0"  style="background-color: #323e54;" class="collapse out" [attr.id]="marketData.id">
                     <div style="margin-left: 6%; padding:10px 10px 10px 30px" class="d-flex flex-column" > 
                         <div style="padding-top:10px; padding-bottom:20px">{{marketData.about}}</div>
-                        <div class="d-flex flex-row justify-content-between align-items-center">
-                          <div  class="d-flex flex-row">
+                        <div class="d-flex flex-row justify-content-start align-items-center">
+                          <div class="d-flex flex-row width-25">
                               <div style="padding-right:10px">
                                   <img src="assets/img/coins.svg" class="param-icon" alt="">
                               </div>
@@ -117,7 +117,7 @@
                                   <div>Total {{marketData.crpto}}s</div>
                               </div>
                           </div>
-                          <div  class="d-flex flex-row">
+                          <div class="d-flex flex-row width-25">
                               <div style="padding-right:10px">
                                   <img src="assets/img/business.svg" class="param-icon" alt="">
                               </div>
@@ -135,7 +135,7 @@
         </table>
         <div style="color:#d8d8d8; padding:38px 0" class="d-flex flex-row justify-content-center align-items-center text-center">
             <span>Load</span>
-            <input style="padding:6px 12px;margin: 0px 9.5px; width:38px" type="text" class="form-control">
+            <input value="50" style="padding:6px 12px;margin: 0px 9.5px; width:50px" type="text" class="form-control">
             <span>currencies</span>
             <button style="padding:6px 12px;margin: 0px 9.5px;" type="button" class="btn btn-primary table-lenght-btn">Go</button>
         </div>

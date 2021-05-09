@@ -1,7 +1,36 @@
 .main-market{
     background: url("../../../assets//img/bg.jpg") no-repeat top;
     background-color: #1a212f;
-    background-size: 100%;
+    background-size: 130%;
+}
+
+.main-market .main-header{
+    text-align:center; 
+    padding: 38px 2px;
+    color:#ffffff;
+}
+
+.main-market .main-header .heading-1{
+    margin-top:38px; 
+    font-size:24px;
+}
+
+.main-market .main-header .heading-2{
+    margin-top:38px;
+    font-size:18px;
+}
+
+.consume-btn{
+    margin:38px 0px 57px; 
+    font-size:20px; 
+    padding:0 38px; 
+    line-height:57px;
+}
+
+.table .signal-icon{
+    padding: 0 5px;
+    font-size:14px; 
+    color:#d8d8d8;
 }
 
 .market_table{
@@ -12,8 +41,9 @@
 }
 
 .market_table tr{
-    margin: 0 auto;
+    margin: 0;
     padding-left: 20px;
+    width:100%;
 }
 
 .market_table td{
@@ -22,6 +52,10 @@
 
 .hidden {
     display: none
+}
+
+.width-25{
+    width:25%;
 }
 
 
