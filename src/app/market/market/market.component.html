@@ -50,7 +50,7 @@
                     <td style="width:3%"><i class="fas fa-plus"></i></td>
                 </tr>
             <div *ngFor="let marketData of marketData ; let i = index">
-                <tr *ngIf="i%2==0" style="background-color: #42506d;" class="d-flex justify-content-between align-items-center" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
+                <tr *ngIf="i%2==0" style="background-color: #42506d; width: 1285px !important" class="d-flex justify-content-between align-items-center" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
                     <td class="crypto-logo" style="width:6%;padding: 0;margin:10px"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
                     <td class="crypto-name" style="width:9%;padding: 0;margin:10px"><b>{{marketData.crpto}}</b></td>
                     <td style="width:8%;padding: 0;margin:10px">{{marketData.last}}</td>
@@ -62,7 +62,7 @@
                     <td style="width:16%;padding: 0;margin:10px">{{marketData.vol}}</td>
                     <td style="width:4%;padding: 0;margin:10px">{{marketData.change}}</td>
                     <td style="width:2%;padding: 0;margin:10px"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;padding: 0;margin:10px"><i class="fas fa-plus"></i></td>
+                    <td style="width:3%;padding: 0;margin:10px"><i class="fas fa-plus" [attr.id]="'abc'+i" (click)="toggleIcon(i)"></i><i [attr.id]="'abcd'+i" (click)="toggleIcon(i)" class="fas fa-minus hidden"></i> </td>
                 </tr>
                 <div *ngIf="i%2==0" style="background-color: #42506d;" class="collapse out" [attr.id]="marketData.id">
                    <div style="margin-left: 6%; padding:10px 10px 10px 30px" class="d-flex flex-column" > 
