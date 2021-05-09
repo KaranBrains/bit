@@ -36,4 +36,9 @@ export class MarketComponent implements OnInit {
     console.log("hello")
   }
 
+  toggleIcon(i:any) {
+    document.getElementById("abc"+i)?.classList.toggle('hidden');
+    document.getElementById("abcd"+i)?.classList.toggle('hidden');
+  }
+
 }
