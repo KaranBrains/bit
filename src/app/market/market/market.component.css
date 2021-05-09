@@ -1,7 +1,22 @@
+.main-market{
+    background: url("../../../assets//img/bg.jpg") no-repeat top;
+    background-color: #1a212f;
+}
+
 .market_table{
-    background-color:#3c4964;
-    color:#ffffff;
+    color: #d8d8d8;;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 5px;
 }
-.market_table tr,td{
-    width:100%;
+
+.market_table tr{
+    margin: 0 auto;
+    padding-left: 20px;
 }
+
+.market_table td{
+    padding:10px;
+}
+
+
