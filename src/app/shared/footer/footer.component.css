@@ -60,6 +60,10 @@ footer {
   width:20%;
 }
 
+.middle-about-section{
+  display: none;
+}
+
 footer {
     background-color: #1a212f;
     padding: 57px 0 0
@@ -154,12 +158,69 @@ footer {
     .newsletter-btn{
       margin-left: 20px;
     }
+    footer .footer-menu-section{
+      padding-bottom: 0px;
+    }
+    .middle-about-section{
+      display:block;
+      margin: 15px 0;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    .middle-about-section a{
+      padding: 0 15px;
+      text-decoration: none;
+    }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 999px) {
+    .footer-ipad{
+      font-size:14px;
+      width:400px;
+      margin: auto;
+    }
+    .footer-ipad-2{
+      font-size:14px;
+      width:600px;
+      margin: auto;
+    }
+    .newsletter-btn{
+      margin-left: 40px;
+    }
     .footer-copyright-main{
       font-size:14px;
       width:100%;
-      margin: auto;
+      margin-left: 0;
+    }
+    .text-center-about{
+      margin-left: 37%;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .footer-ipad{
+      font-size:14px;
+      width:250px;
+      margin: auto;
+    }
+    .footer-ipad-2{
+      font-size:14px;
+      width:400px;
+      margin: auto;
+    }
+    .newsletter-btn{
+      margin-left: 40px;
+    }
+    .footer-copyright-main{
+      font-size:14px;
+      width:100%;
+      margin-left: 0;
+    }
+    .text-center-about{
+      /* margin-left: 37% !important; */
+    }
+  }
+
+  
+  

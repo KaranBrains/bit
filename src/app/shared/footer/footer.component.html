@@ -2,7 +2,7 @@
     <section class="footer-menu-section">
       <div class="container">
         <div class="row">
-          <div class="col-xs-6 col-md-2">
+          <div class="col-xs-6 col-md-2 footer-ipad">
             <a href="#">
               <div class="text-center">
                 <img src="../../../assets/img/footer-logo.png" alt="bitcoinaverage"/>
@@ -28,11 +28,18 @@
               </li>
             </ul>
           </div>
-          <div class="col-xs-6 col-md-3 footer-item-align-center">
+          <div class="col-md-2 middle-about-section">
+            <div class="text-center hidden-very-small">
+              <a target="_blank" ui-sref="app.faq" href="https://bitcoinaverage.com/en/faq">About</a>
+              <a target="_blank" ui-sref="app.terms" href="https://bitcoinaverage.com/en/terms">Terms</a>
+              <a target="_blank" ui-sref="app.privacypolicy" href="https://bitcoinaverage.com/en/privacypolicy">Policy</a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-md-3 footer-item-align-center footer-ipad">
             <div (click)="toggleClass(1)">
             <h3>Global Price</h3>
             </div>
-            <div id="collapse-footer-data-1">
+            <div id="collapse-footer-data-1"  class="hidden-footer-data">
             <ul class="nav flex-column footer-menu">
               <li class="nav-item">
                 <a class="nav-link" href="https://bitcoinaverage.com/en/exchanges" target="_blank">Real time data</a>
@@ -55,11 +62,11 @@
             </ul>
             </div>
           </div>
-          <div class="col-xs-6 col-md-2 footer-item-align-center">
+          <div class="col-xs-6 col-md-2 footer-item-align-center footer-ipad">
             <div (click)="toggleClass(2)">
             <h3>Bitcoin Price API</h3>
             </div>
-            <div id="collapse-footer-data-2">
+            <div id="collapse-footer-data-2" class="hidden-footer-data">
             <ul class="nav flex-column footer-menu">
               <li class="nav-item">
                 <a class="nav-link" href="https://bitcoinaverage.com/en/currency-markets" target="_blank">Currency Markets</a>
@@ -82,11 +89,11 @@
             </ul>
             </div>
           </div>
-          <div class="col-xs-6 col-md-3 footer-item-align-center">
+          <div class="col-xs-6 col-md-3 footer-item-align-center footer-ipad">
             <div (click)="toggleClass(3)">
             <h3>Custom Index Generation </h3>
             </div>
-           <div id="collapse-footer-data-3">
+           <div id="collapse-footer-data-3" class="hidden-footer-data">
             <ul class="nav flex-column footer-menu">
               <li class="nav-item">
                 <a class="nav-link" href="https://bitcoinaverage.com/en/exchanges" target="_blank">Exchanges</a>
@@ -109,7 +116,7 @@
             </ul>
            </div>
           </div>
-          <div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2">
+          <div class="col-xs-offset-3 col-xs-6 col-md-offset-0 col-md-2 footer-ipad-2">
             <h3 class="footer-item-align-center">Sign Up For Our Newsletter</h3>
             <form class="form" action="">
               <div class="form-input newslater-div d-flex flex-row" >
@@ -126,7 +133,7 @@
                 <br>Blockchain Data LTD © 2012-2021</p>
             </div>
           </div>
-          <div class="col-md-2 ">
+          <div class="col-md-2 hidden-footer-data text-center-about ">
             <div class="footer-section-links text-center hidden-very-small">
               <a target="_blank" ui-sref="app.faq" href="https://bitcoinaverage.com/en/faq">About</a>
               <a target="_blank" ui-sref="app.terms" href="https://bitcoinaverage.com/en/terms">Terms</a>
