@@ -11,13 +11,40 @@
 }
 
 .main-market .main-header .heading-1{
+    font-family:inherit;
     margin-top:38px; 
-    font-size:24px;
+    font-size:1.49975rem;
+    font-weight: 400;
+}
+
+.table .main-row-head{
+    margin:10px 0px;
+    color:#fff; 
+    padding: 8px 8px 8px 20px;
+    background-color: #42506d;
 }
 
 .main-market .main-header .heading-2{
     margin-top:38px;
-    font-size:18px;
+    font-size:1.2rem;
+    font-weight: 400;
+    font-family: inherit;
+}
+
+.main-market-search{
+    color:#d8d8d8;
+    padding:38px 0;
+}
+
+.main-market-search-input{
+    padding:6px 12px;
+    margin: 0px 9.5px;
+    width:50px;
+}
+
+.main-market-search-buttton{
+    padding:6px 12px;
+    margin: 0px 9.5px;
 }
 
 .consume-btn{
@@ -25,6 +52,7 @@
     font-size:20px; 
     padding:0 38px; 
     line-height:57px;
+    font-weight: 600;
 }
 
 .table .signal-icon{
@@ -58,4 +86,16 @@
     width:25%;
 }
 
+.pr-10{
+    padding-right: 10px;
+}
 
+.main-marketdata-about{
+    padding-top:10px; 
+    padding-bottom:20px
+}
+
+.main-about-total{
+    margin-left: 6%; 
+    padding:10px 10px 10px 30px;
+}

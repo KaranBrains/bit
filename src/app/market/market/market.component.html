@@ -1,14 +1,14 @@
 <div class=" main-market">
     <div class="container">
         <div class="main-header">
-            <h1 class="heading-1">Real-time Cryptocurrency Exchange Rates by Market Capitalization</h1>
-            <h2 class="heading-2">Check aggregated crypto price data for for the top 50, including Bitcoin & Ethereum</h2>
-            <a href="#" class="consume-btn btn btn-primary main-btn">Consume via API</a>
+            <p class="heading-1">Real-time Cryptocurrency Exchange Rates by Market Capitalization</p>
+            <p class="heading-2">Check aggregated crypto price data for for the top 50, including Bitcoin & Ethereum</p>
+            <a href="#" class="consume-btn btn btn-primary main-btn">CONSUME VIA API</a>
         </div>
         <table class="table main-table table-responsive table-borderless market_table">
                <thead></thead>
                <tbody>
-                <tr style="background-color: #42506d;margin:10px 0px; color:#fff; padding: 8px 8px 8px 20px;" class="d-flex justify-content-between align-items-center">
+                <tr class="main-row-head d-flex justify-content-between align-items-center">
                     <td class="td-m-10" style="width:6%;"></td>
                     <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
                         <div>CRYPTO</div>
@@ -65,11 +65,11 @@
                     <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
                 </tr>
                 <div *ngIf="i%2==0" style="background-color: #42506d;" class="collapse out" [attr.id]="marketData.id">
-                   <div style="margin-left: 6%; padding:10px 10px 10px 30px" class="d-flex flex-column" > 
-                      <div style="padding-top:10px; padding-bottom:20px">{{marketData.about}}</div>
+                   <div class="d-flex flex-column main-about-total" > 
+                      <div class="main-marketdata-about">{{marketData.about}}</div>
                       <div class="d-flex flex-row justify-content-start align-items-center">
                         <div class="d-flex flex-row width-25">
-                            <div style="padding-right:10px">
+                            <div class="pr-10">
                                 <img src="assets/img/coins.svg" class="param-icon" alt="">
                             </div>
                             <div class="d-flex flex-column">
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row width-25">
-                            <div style="padding-right:10px">
+                            <div class="pr-10">
                                 <img src="assets/img/business.svg" class="param-icon" alt="">
                             </div>
                             <div class="d-flex flex-column">
@@ -105,11 +105,11 @@
                     <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i"></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
                 </tr>
                 <div *ngIf="i%2!=0"  style="background-color: #323e54;" class="collapse out" [attr.id]="marketData.id">
-                    <div style="margin-left: 6%; padding:10px 10px 10px 30px" class="d-flex flex-column" > 
-                        <div style="padding-top:10px; padding-bottom:20px">{{marketData.about}}</div>
+                    <div class="main-about-total d-flex flex-column" > 
+                        <div class="main-marketdata-about">{{marketData.about}}</div>
                         <div class="d-flex flex-row justify-content-start align-items-center">
                           <div class="d-flex flex-row width-25">
-                              <div style="padding-right:10px">
+                              <div class="pr-10">
                                   <img src="assets/img/coins.svg" class="param-icon" alt="">
                               </div>
                               <div class="d-flex flex-column">
@@ -118,7 +118,7 @@
                               </div>
                           </div>
                           <div class="d-flex flex-row width-25">
-                              <div style="padding-right:10px">
+                              <div class="pr-10">
                                   <img src="assets/img/business.svg" class="param-icon" alt="">
                               </div>
                               <div class="d-flex flex-column">
@@ -133,11 +133,11 @@
             </div>
             </tbody>
         </table>
-        <div style="color:#d8d8d8; padding:38px 0" class="d-flex flex-row justify-content-center align-items-center text-center">
+        <div class="main-market-search d-flex flex-row justify-content-center align-items-center text-center">
             <span>Load</span>
-            <input value="50" style="padding:6px 12px;margin: 0px 9.5px; width:50px" type="text" class="form-control">
+            <input value="50" type="text" class="main-market-search-input form-control">
             <span>currencies</span>
-            <button style="padding:6px 12px;margin: 0px 9.5px;" type="button" class="btn btn-primary table-lenght-btn">Go</button>
+            <button type="button" class="main-market-search-buttton btn btn-primary table-lenght-btn">Go</button>
         </div>
     </div>    
 </div>

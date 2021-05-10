@@ -12,4 +12,8 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleClass(i:any) {
+    document.getElementById("collapse-footer-data-"+i)?.classList.toggle('hidden-footer-data');
+  }
+
 }

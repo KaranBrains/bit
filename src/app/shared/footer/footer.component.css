@@ -37,10 +37,27 @@ footer {
 }
 
 .form-control-use{
-  width: 80%;
   padding: 12px 40px 12px 10px;
   font-size:14px;
+  width:80%;
+  border: hidden;
+}
+
+.newslater-div{
+  height:45px;
+  background-color: #fff;
+  border: solid 1px black;
+  padding-left: 5px;
   border-radius: 5px;
+}
+
+.newsletter-btn{
+  background-color: #fff;
+  padding: auto;
+  margin-left: -10px;
+  font-size:22px;
+  border: hidden;
+  width:20%;
 }
 
 footer {
@@ -120,4 +137,29 @@ footer {
   
   .social-links {
     justify-content: center;
+  }
+
+  @media only screen and (max-width: 540px) {
+    .hidden-footer-data{
+      display: none !important;
+    }
+    .footer-copyright-main{
+      font-size:14px;
+      width:100%;
+      margin: auto;
+    }
+    .footer-item-align-center{
+      text-align:center;
+    }
+    .newsletter-btn{
+      margin-left: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .footer-copyright-main{
+      font-size:14px;
+      width:100%;
+      margin: auto;
+    }
   }
