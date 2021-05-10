@@ -62,7 +62,7 @@
                     <td style="width:16%;">{{marketData.vol}}</td>
                     <td style="width:4%;">{{marketData.change}}</td>
                     <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i" (click)="toggleIcon(i)"></i><i [attr.id]="'abcd'+i" (click)="toggleIcon(i)" class="fas fa-minus hidden"></i> </td>
+                    <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
                 </tr>
                 <div *ngIf="i%2==0" style="background-color: #42506d;" class="collapse out" [attr.id]="marketData.id">
                    <div style="margin-left: 6%; padding:10px 10px 10px 30px" class="d-flex flex-column" > 
@@ -102,7 +102,7 @@
                     <td style="width:16%;">{{marketData.vol}}</td>
                     <td style="width:4%;">{{marketData.change}}</td>
                     <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i" (click)="toggleIcon(i)"></i><i [attr.id]="'abcd'+i" (click)="toggleIcon(i)" class="fas fa-minus hidden"></i> </td>
+                    <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i"></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
                 </tr>
                 <div *ngIf="i%2!=0"  style="background-color: #323e54;" class="collapse out" [attr.id]="marketData.id">
                     <div style="margin-left: 6%; padding:10px 10px 10px 30px" class="d-flex flex-column" > 
