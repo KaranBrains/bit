@@ -1,0 +1,235 @@
+<main class="markets-main">
+
+  <section class="header-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <!-- <div class="crypto-logo"><img src="assets/img/ethereum-large.png" height="90" width="90"></div>currencyData -->
+          <div class="crypto-logo"><img src="assets/img/logo/128/{{crypto}}.png" height="90" width="90" alt="crypto"></div>
+          <div class="crypto-name-container">
+            <div class="crypto-name">{{cryptoData.display_name}}</div><div class="crypto-index">{{crypto}}</div>
+          </div>
+          <div class="exchange-dropdown">
+            <div class="dropdown">
+              <a class="btn btn-secondary " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <!-- <a class="btn btn-secondary dropdown-toggle" (click)="openPopup()">  dropdown-toggle-->
+                {{crypto}}/{{selectedCurrency}}
+              </a>
+              <div class="dropdown-menu" id="currency-popper" aria-labelledby="dropdownMenuLink">
+              <!-- <div class="dropdown-menu" *ngIf="isPopper"> -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="fiat-tab" data-toggle="tab" href="#fiat" role="tab" aria-controls="fiat" aria-selected="true" >Fiat</a>
+                    <!-- [ngClass]="{'active' : (popperTab == 'fiat')}" -->
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="crypto-tab" data-toggle="tab" href="#crypto" role="tab" aria-controls="crypto" aria-selected="false">Crypto</a>
+                    <!-- [ngClass]="{'active' : (popperTab == 'crypto')}"  -->
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="token-tab" data-toggle="tab" href="#token" role="tab" aria-controls="token" aria-selected="false">Token</a>
+                     <!-- [ngClass]="{'active' : (popperTab == 'token')}"  -->
+                  </li>
+                </ul>
+                <div class="tab-content popper-block" id="myTabContent">
+                  <div class="tab-pane fade show active" id="fiat" role="tabpanel" aria-labelledby="fiat-tab">
+                    <div class="d-flex flex-wrap">
+                      <ng-template ngFor let-row [ngForOf]="popper.fiat"  let-i="index" let-isEven="even" let-isOdd="odd" let-isFirst="first" let-isLast="last">
+                        <!-- <a class="exchange" routerLink="/markets/coins/fiat/{{crypto}}/{{row}}" (click)="setCurrencyDetail(row,i,'tokens')"> -->
+                        <a class="exchange" (click)="redirect(crypto,row,'fiat')">
+                          <span [ngClass]="{'active' : (row == selectedCurrency)}" class="normal-font">{{row}}</span>
+                        </a>
+                      </ng-template>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="crypto" role="tabpanel" aria-labelledby="crypto-tab">
+                    <div class="d-flex flex-wrap">
+                      <ng-template ngFor let-row [ngForOf]="popper.crypto"  let-i="index" let-isEven="even" let-isOdd="odd" let-isFirst="first" let-isLast="last">
+                        <!-- <a class="exchange" routerLink="/markets/coins/crypto/{{crypto}}/{{row}}" (click)="setCurrencyDetail(row,i,'tokens')"> -->
+                        <a class="exchange" (click)="redirect(crypto,row,'crypto')">
+                          <span [ngClass]="{'active' : (row == selectedCurrency)}" class="normal-font">{{row}}</span>
+                        </a>
+                      </ng-template>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="token" role="tabpanel" aria-labelledby="token-tab">
+                    <div class="d-flex flex-wrap">
+                      <ng-template ngFor let-row [ngForOf]="popper.tokens"  let-i="index" let-isEven="even" let-isOdd="odd" let-isFirst="first" let-isLast="last">
+                        <!-- <a class="exchange" routerLink="/markets/coins/token/{{crypto}}/{{row}}" (click)="setCurrencyDetail(row,i,'tokens')"> -->
+                        <a class="exchange" (click)="redirect(crypto,row,'token')">
+                          <span [ngClass]="{'active' : (row == selectedCurrency)}" class="normal-font">{{row}}</span>
+                        </a>
+                      </ng-template>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 price-container">
+          <div class="price-dynamics">
+            <div class="count-title">24h CHANGE</div>
+            <div class="price-up" [hidden]="cryptoData.change_percent < 0"> <i class="crypto-icon-up-arrow"></i> {{cryptoData.change_percent}}%</div>
+            <div class="price-down" [hidden]="cryptoData.change_percent >= 0"> <i class="crypto-icon-down-arrow"></i> {{cryptoData.change_percent - cryptoData.change_percent - cryptoData.change_percent}}%</div>
+
+            <!-- <div class="price-up" [hidden]="cryptoData.changes.percent.day < 0"> <i class="crypto-icon-up-arrow"></i> {{cryptoData.changes.percent.day}}%</div>
+            <div class="price-down" [hidden]="cryptoData.changes.percent.dayt >= 0"> <i class="crypto-icon-down-arrow"></i> {{cryptoData.changes.percent.day - cryptoData.changes.percent.day - cryptoData.changes.percent.day}}%</div> -->
+          </div>
+          <div class="price">
+            <div class="count-title">Current price</div>
+            <!-- <div class="current-price"><span class="currency">$</span>1000,003.19</div> -->
+            <div class="current-price" *ngIf="popperTab=='local'"><span class="currency">$</span><span [ngClass]="cryptoData.isFresh?{'badge-success' : (cryptoData.nLast == 1),'badge-danger' : (cryptoData.nLast == -1)}:''">{{cryptoData.last | number : '.2-2'}}</span></div>
+            <div class="current-price" *ngIf="popperTab!='local'"><span [ngClass]="cryptoData.isFresh?{'badge-success' : (cryptoData.nLast == 1),'badge-danger' : (cryptoData.nLast == -1)}:''">{{cryptoData.last | number : decimalPlaces}}</span><span> {{selectedCurrency}}</span></div>
+            <div class="current-price-small" [hidden]="crypto == 'BTC'">{{cryptoData.btc_price | number : '.2-8'}} BTC</div>
+          </div>
+        </div>
+      </div>
+      <div class="widgets-container d-flex flex-row">
+        <div class="widget">
+          <!-- $ 929.28 -->
+          {{selectedCurrency}} {{cryptoData.open | number : decimalPlaces}}
+          <div class="count-title ">
+            Open 24h
+          </div>
+        </div>
+        <div class="widget">
+          <!-- $ 100.04 B -->
+          $ {{cryptoData.market_cap | shortNumber}}
+          <div class="count-title ">
+            Market Cap
+          </div>
+        </div>
+        <div class="widget">
+          {{selectedCurrency}} {{cryptoData.volume | shortNumber}}($ {{cryptoData.volume_target  | shortNumber}})<!-- Ξ 559.43 K ($ 552.95 M) -->
+          <div class="count-title ">
+            Vol. 24H
+          </div>
+        </div>
+        <div class="widget">
+          {{selectedCurrency}} {{cryptoData.low | number : decimalPlaces}} – $ {{cryptoData.high | number : decimalPlaces}} <!-- $ 923.93 – $ 1,030.38 -->
+          <div class="count-title ">
+            Low/High 24H
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="tab1-link" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">CHART</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" id="tab2-link" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">TAB 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab3-link" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">TAB 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab4-link" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">TAB 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab5-link" data-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">TAB 3</a>
+        </li> -->
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active chart-container" id="tab1" role="tabpanel" aria-labelledby="home-tab">
+          <div class="chart-content">
+            <ul class="nav nav-pills float-right chart-ctrs">
+              <li class="nav-item">
+                <a class="nav-link link-cursor" [ngClass]="{'active' : isHour}" (click)="historyData('hour')">1 Hour</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-cursor" [ngClass]="{'active' : isDay}" (click)="historyData('day')">1 Day</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-cursor" [ngClass]="{'active' : isWeek}" (click)="historyData('week')">1 Week</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-cursor" [ngClass]="{'active' : isMonth}" (click)="historyData('month')">1 Month</a>
+              </li>
+            </ul>
+          </div>
+          <div class="chart-grid">
+            <div class="chart">
+              <!-- <base-chart>
+              </base-chart> -->
+              <canvas baseChart style="width:100%; height:480px;"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartClick)="chartClicked()"></canvas>
+            </div>
+            <!--(chartHover)="chartHovered($event)"
+              -->
+            <!-- <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div> -->
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="profile-tab">
+          <p>
+          </p>
+          <p>
+          </p>
+          <p>
+          </p>
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="contact-tab">
+          <p>
+          </p>
+        </div>
+        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="contact-tab">
+          <p>
+          </p>
+        </div>
+        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="contact-tab">
+          <p>
+          </p>
+        </div>
+      </div>
+
+      <ul class="nav nav-tabs" id="myTab2" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="tab12-link" data-toggle="tab" href="#tab12" role="tab" aria-controls="tab12" aria-selected="true">Summary</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" id="tab22-link" data-toggle="tab" href="#tab22" role="tab" aria-controls="tab22" aria-selected="false">TAB 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab33-link" data-toggle="tab" href="#tab33" role="tab" aria-controls="tab33" aria-selected="false">TAB 3</a>
+        </li> -->
+      </ul>
+      <div class="tab-content" id="myTabContent2">
+        <div class="tab-pane fade show active" id="tab12" role="tabpanel" aria-labelledby="home-tab">
+          <!-- <p *ngIf="tabData.part1">{{tabData.part1}}</p>
+          <p *ngIf="!tabData.part1">Info Not Available</p> -->
+          <h1>{{tabData?.part1?.title}}</h1>
+          <p>{{tabData?.part1?.content}}</p>
+          <h2>{{tabData?.part2?.title}}</h2>
+          <p>{{tabData?.part2?.content}}</p>
+          <h2>{{tabData?.part3?.title}}</h2>
+          <p>{{tabData?.part3?.content}}</p>
+          <p *ngIf="!tabData.part1 && !tabData.part2 && !tabData.part3">Info Not Available</p>
+        </div>
+        <!-- <div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="profile-tab">
+          <p *ngIf="tabData.part2">{{tabData.part2}}</p>
+          <p *ngIf="!tabData.part2">Info Not Available</p>
+        </div>
+        <div class="tab-pane fade" id="tab33" role="tabpanel" aria-labelledby="contact-tab">
+          <p *ngIf="tabData.part3">{{tabData.part3}}</p>
+          <p *ngIf="!tabData.part3">Info Not Available</p>
+        </div> -->
+      </div>
+    </div>
+  </section>
+</main>

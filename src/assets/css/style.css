@@ -62,7 +62,7 @@ main{
 }
 
 body{
-  /* background-image: url("/assets/img/bg.jpg"); */
+  background-image: url("/assets/img/bg.jpg");
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;

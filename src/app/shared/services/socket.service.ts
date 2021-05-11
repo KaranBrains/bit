@@ -6,7 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
 import { Event } from '../../event.enum';
 import { environment } from '../../../environments/environment';
-import * as socketIo from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class SocketService {
   }
 
   public initSocket(): void {
-      this.socket = socketIo(this.appUrl);
+      this.socket = io(this.appUrl);
   }
 
   public disconnectSocket(): void {

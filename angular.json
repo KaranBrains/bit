@@ -20,6 +20,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "socket.io-client",
+              "socket.io-parser",
+              "debug",
+              "chart.js"
+              ],
             "outputPath": "dist/ba-frontend11/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -32,6 +38,8 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/assets/css/app.css",
+              "src/assets/css/style.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"

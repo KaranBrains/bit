@@ -177,7 +177,7 @@ footer {
   @media only screen and (max-width: 999px) {
     .footer-ipad{
       font-size:14px;
-      width:400px;
+      width:350px;
       margin: auto;
     }
     .footer-ipad-2{
@@ -201,12 +201,12 @@ footer {
   @media only screen and (max-width: 768px) {
     .footer-ipad{
       font-size:14px;
-      width:250px;
+      width:250px !important;
       margin: auto;
     }
     .footer-ipad-2{
       font-size:14px;
-      width:400px;
+      width:400px  !important;
       margin: auto;
     }
     .newsletter-btn{
@@ -218,7 +218,7 @@ footer {
       margin-left: 0;
     }
     .text-center-about{
-      /* margin-left: 37% !important; */
+      margin-left: 37%;
     }
   }
 

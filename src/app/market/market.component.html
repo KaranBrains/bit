@@ -1,56 +1,57 @@
 <div class=" main-market">
     <div class="container">
         <div class="main-header">
-            <p class="heading-1">Real-time Cryptocurrency Exchange Rates by Market Capitalization</p>
-            <p class="heading-2">Check aggregated crypto price data for for the top 50, including Bitcoin & Ethereum</p>
+            <p class="text-25">Real-time Cryptocurrency Exchange Rates by Market Capitalization</p>
+            <p class="text-20">Check aggregated crypto price data for for the top 50, including Bitcoin & Ethereum</p>
             <a href="#" class="consume-btn btn btn-primary main-btn">CONSUME VIA API</a>
         </div>
         <table class="table main-table table-responsive table-borderless market_table">
-               <thead></thead>
-               <tbody>
-                <tr class="main-row-head d-flex justify-content-between align-items-center">
+               <thead>
+                <tr class="d-flex justify-content-between align-items-center market-header">
                     <td class="td-m-10" style="width:6%;"></td>
                     <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>CRYPTO</div>
+                        <div (click)="sort('crpto')">CRYPTO</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
                     <td  style="width:8%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>LAST</div>
+                        <div (click)="sort('last')">LAST</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
                     <td  style="width:8%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>BID</div>
+                        <div (click)="sort('bid')">BID</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
                     <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>ASK</div>
+                        <div (click)="sort('ask')">ASK</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
                     <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>HIGH</div>
+                        <div (click)="sort('high')">HIGH</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
                     <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>LOW</div>
+                        <div (click)="sort('low')">LOW</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
                     <td  style="width:16%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>MKTCAP</div>
+                        <div (click)="sort('mktcap')">MKTCAP</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
                     <td  style="width:16%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>VOL</div>
+                        <div (click)="sort('vol')">VOL</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
                     <td  style="width:4%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div>CHANGE</div>
+                        <div (click)="sort('change')">CHANGE</div>
                         <i class="fas fa-sort signal-icon"></i>
                     </td>
-                    <td style="width:2%;"></td>
-                    <td style="width:3%;"><i class="fas fa-plus"></i></td>
+                    <td style="width:2%;">&nbsp;</td>
+                    <td style="width:3%;"><i class="fas fa-minus"  data-toggle="collapse" id="abcdxyz" (click)="toggleIconHeader('xyz')" [attr.data-target]="'.all-info'"></i></td>
                 </tr>
+               </thead>
+               <tbody >
             <div *ngFor="let marketData of marketData ; let i = index">
-                <tr *ngIf="i%2==0" style="background-color: #42506d; width: 1296px !important" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
+                <tr *ngIf="i%2==0 && shouldToggle" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center market-row market-row1" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
                     <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
                     <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
                     <td style="width:8%;">{{marketData.last}}</td>
@@ -62,27 +63,41 @@
                     <td style="width:16%;">{{marketData.vol}}</td>
                     <td style="width:4%;">{{marketData.change}}</td>
                     <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
+                    <td style="width:3%;"><i class="fas fa-plus " [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
                 </tr>
-                <div *ngIf="i%2==0" style="background-color: #42506d;" class="collapse out" [attr.id]="marketData.id">
-                   <div class="d-flex flex-column main-about-total" > 
-                      <div class="main-marketdata-about">{{marketData.about}}</div>
+                <tr *ngIf="i%2==0 && !shouldToggle" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center market-row market-row1">
+                    <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
+                    <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
+                    <td style="width:8%;">{{marketData.last}}</td>
+                    <td style="width:8%;">{{marketData.bid}}</td>
+                    <td style="width:9%;">{{marketData.ask}}</td>
+                    <td style="width:9%;">{{marketData.high}}</td>
+                    <td style="width:9%;">{{marketData.low}}</td>
+                    <td style="width:16%;">{{marketData.mktcap}}</td>
+                    <td style="width:16%;">{{marketData.vol}}</td>
+                    <td style="width:4%;">{{marketData.change}}</td>
+                    <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
+                    <td style="width:3%;"><i class="fas fa-plus hidden" [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus"></i> </td>
+                </tr>
+                <div *ngIf="i%2==0" class="collapse out market-row1 all-info" [attr.id]="marketData.id">
+                   <div style="margin-left: 6%; padding:10px 10px 10px 30px ;" class="d-flex flex-column" > 
+                      <div style="padding-top:10px; padding-bottom:20px">{{marketData.about}}</div>
                       <div class="d-flex flex-row justify-content-start align-items-center">
                         <div class="d-flex flex-row width-25">
-                            <div class="pr-10">
+                            <div style="padding-right:10px">
                                 <img src="assets/img/coins.svg" class="param-icon" alt="">
                             </div>
                             <div class="d-flex flex-column">
-                                <div> {{marketData.total}}</div>
+                                <div class="sub-heading"> {{marketData.total}}</div>
                                 <div>Total {{marketData.crpto}}s</div>
                             </div>
                         </div>
                         <div class="d-flex flex-row width-25">
-                            <div class="pr-10">
+                            <div style="padding-right:10px">
                                 <img src="assets/img/business.svg" class="param-icon" alt="">
                             </div>
                             <div class="d-flex flex-column">
-                                <div>{{marketData.mktcap}}</div>
+                                <div class="sub-heading">{{marketData.mktcap}}</div>
                                 <div>Market Capitalization</div>
                             </div>
                         </div>
@@ -90,7 +105,7 @@
                       </div>
                    </div>
                 </div>
-                <tr *ngIf="i%2!=0" style="background-color: #323e54;" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
+                <tr *ngIf="i%2!=0 && shouldToggle" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center market-row market-row2" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
                     <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
                     <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
                     <td style="width:8%;">{{marketData.last}}</td>
@@ -102,27 +117,41 @@
                     <td style="width:16%;">{{marketData.vol}}</td>
                     <td style="width:4%;">{{marketData.change}}</td>
                     <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;"><i class="fas fa-plus" [attr.id]="'abc'+i"></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
+                    <td style="width:3%;"><i class="fas fa-plus rounded-border" [attr.id]="'abc'+i"></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
                 </tr>
-                <div *ngIf="i%2!=0"  style="background-color: #323e54;" class="collapse out" [attr.id]="marketData.id">
-                    <div class="main-about-total d-flex flex-column" > 
-                        <div class="main-marketdata-about">{{marketData.about}}</div>
+                <tr *ngIf="i%2!==0 && !shouldToggle" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center market-row market-row2">
+                    <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
+                    <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
+                    <td style="width:8%;">{{marketData.last}}</td>
+                    <td style="width:8%;">{{marketData.bid}}</td>
+                    <td style="width:9%;">{{marketData.ask}}</td>
+                    <td style="width:9%;">{{marketData.high}}</td>
+                    <td style="width:9%;">{{marketData.low}}</td>
+                    <td style="width:16%;">{{marketData.mktcap}}</td>
+                    <td style="width:16%;">{{marketData.vol}}</td>
+                    <td style="width:4%;">{{marketData.change}}</td>
+                    <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
+                    <td style="width:3%;"><i class="fas fa-plus hidden" [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus"></i> </td>
+                </tr>
+                <div *ngIf="i%2!=0" class="collapse out market-row2 all-info" [attr.id]="marketData.id">
+                    <div style="margin-left: 6%; padding:10px 10px 10px 30px ;" class="d-flex flex-column" > 
+                        <div style="padding-top:10px; padding-bottom:20px">{{marketData.about}}</div>
                         <div class="d-flex flex-row justify-content-start align-items-center">
                           <div class="d-flex flex-row width-25">
-                              <div class="pr-10">
+                              <div style="padding-right:10px">
                                   <img src="assets/img/coins.svg" class="param-icon" alt="">
                               </div>
                               <div class="d-flex flex-column">
-                                  <div> {{marketData.total}}</div>
+                                  <div class="sub-heading"> {{marketData.total}}</div>
                                   <div>Total {{marketData.crpto}}s</div>
                               </div>
                           </div>
                           <div class="d-flex flex-row width-25">
-                              <div class="pr-10">
+                              <div style="padding-right:10px">
                                   <img src="assets/img/business.svg" class="param-icon" alt="">
                               </div>
                               <div class="d-flex flex-column">
-                                  <div>{{marketData.mktcap}}</div>
+                                  <div class="sub-heading">{{marketData.mktcap}}</div>
                                   <div>Market Capitalization</div>
                               </div>
                           </div>
@@ -133,11 +162,11 @@
             </div>
             </tbody>
         </table>
-        <div class="main-market-search d-flex flex-row justify-content-center align-items-center text-center">
+        <div style="color:#d8d8d8; padding:38px 0" class="d-flex flex-row justify-content-center align-items-center text-center">
             <span>Load</span>
-            <input value="50" type="text" class="main-market-search-input form-control">
+            <input value="50" style="padding:6px 12px;margin: 0px 9.5px; width:50px" type="text" class="form-control" id="filterInput">
             <span>currencies</span>
-            <button type="button" class="main-market-search-buttton btn btn-primary table-lenght-btn">Go</button>
+            <button style="padding:6px 12px;margin: 0px 9.5px;" type="button" class="btn btn-primary table-lenght-btn" (click)="filter()">Go</button>
         </div>
     </div>    
 </div>

@@ -9,7 +9,11 @@ const routes: Routes = [
   },
   {
     path:'markets',
-    loadChildren: () => import('./market/market/market.module').then(m => m.MarketModule),
+    loadChildren: () => import('./market/market.module').then(m => m.MarketModule),
+  },
+  {
+    path:'coins/:crypto/:currency',
+    loadChildren: () => import('./coins/coins.module').then(m => m.CoinsModule),
   }
 ];
 

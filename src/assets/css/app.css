@@ -133,37 +133,13 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: .875rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.4;
-  color: #fff;
+  color: #d8d8d8;
   text-align: left;
   background-color: #1a212f
-}
-
-
-.section-title {
-  color: #4a90e2 !important;
-}
-
-.section-font-33 {
-  font-size: 33px !important;
-}
-
-p {
-  font-size: 16px;
-}
-
-
-.section-underline {
-  text-decoration: underline !important;
-  text-decoration-color: #4a90e2 !important;
-}
-
-.container-fluid {
-  background-color: white;
-  color: black;
 }
 
 [tabindex="-1"]:focus {
@@ -9717,14 +9693,9 @@ p {
   width: 240px
 }
 
-body {
-  font-family: "Open Sans", sans-serif !important;
-}
-
 main {
   background-image: url(../img/bg.jpg);
   background-position-x: center;
-  font-family: 'Open Sans', sans-serif;
   background-position-y: top;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -9735,6 +9706,13 @@ main {
 main h1 {
   color: #fff;
   font-size: 1.49975rem;
+  font-weight: 400;
+  margin: 38px 0 0 0
+}
+
+main h2{
+  color: #fff;
+  font-size: 1.2rem;
   font-weight: 400;
   margin: 38px 0 0 0
 }
