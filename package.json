@@ -34,6 +34,7 @@
     "loadash": "^1.0.0",
     "lodash": "^4.17.21",
     "ng2-charts": "^2.4.2",
+    "ngx-order-pipe": "^2.1.1",
     "ngx-owl-carousel": "^2.0.7",
     "ngx-owl-carousel-o": "^5.0.0",
     "ngx-slick-carousel": "^0.5.1",

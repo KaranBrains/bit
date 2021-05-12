@@ -1,172 +1,103 @@
-<div class=" main-market">
+<main class="text-center">
     <div class="container">
-        <div class="main-header">
-            <p class="text-25">Real-time Cryptocurrency Exchange Rates by Market Capitalization</p>
-            <p class="text-20">Check aggregated crypto price data for for the top 50, including Bitcoin & Ethereum</p>
-            <a href="#" class="consume-btn btn btn-primary main-btn">CONSUME VIA API</a>
-        </div>
-        <table class="table main-table table-responsive table-borderless market_table">
-               <thead>
-                <tr class="d-flex justify-content-between align-items-center market-header">
-                    <td class="td-m-10" style="width:6%;"></td>
-                    <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('crpto')">CRYPTO</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td  style="width:8%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('last')">LAST</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td  style="width:8%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('bid')">BID</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('ask')">ASK</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('high')">HIGH</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td  style="width:9%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('low')">LOW</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td  style="width:16%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('mktcap')">MKTCAP</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td  style="width:16%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('vol')">VOL</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td  style="width:4%;" class="d-flex flex-row align-items-center justify-content-start">
-                        <div (click)="sort('change')">CHANGE</div>
-                        <i class="fas fa-sort signal-icon"></i>
-                    </td>
-                    <td style="width:2%;">&nbsp;</td>
-                    <td style="width:3%;"><i class="fas fa-minus"  data-toggle="collapse" id="abcdxyz" (click)="toggleIconHeader('xyz')" [attr.data-target]="'.all-info'"></i></td>
-                </tr>
-               </thead>
-               <tbody >
-            <div *ngFor="let marketData of marketData ; let i = index">
-                <tr *ngIf="i%2==0 && shouldToggle" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center market-row market-row1" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
-                    <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
-                    <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
-                    <td style="width:8%;">{{marketData.last}}</td>
-                    <td style="width:8%;">{{marketData.bid}}</td>
-                    <td style="width:9%;">{{marketData.ask}}</td>
-                    <td style="width:9%;">{{marketData.high}}</td>
-                    <td style="width:9%;">{{marketData.low}}</td>
-                    <td style="width:16%;">{{marketData.mktcap}}</td>
-                    <td style="width:16%;">{{marketData.vol}}</td>
-                    <td style="width:4%;">{{marketData.change}}</td>
-                    <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;"><i class="fas fa-plus " [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
-                </tr>
-                <tr *ngIf="i%2==0 && !shouldToggle" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center market-row market-row1">
-                    <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
-                    <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
-                    <td style="width:8%;">{{marketData.last}}</td>
-                    <td style="width:8%;">{{marketData.bid}}</td>
-                    <td style="width:9%;">{{marketData.ask}}</td>
-                    <td style="width:9%;">{{marketData.high}}</td>
-                    <td style="width:9%;">{{marketData.low}}</td>
-                    <td style="width:16%;">{{marketData.mktcap}}</td>
-                    <td style="width:16%;">{{marketData.vol}}</td>
-                    <td style="width:4%;">{{marketData.change}}</td>
-                    <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;"><i class="fas fa-plus hidden" [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus"></i> </td>
-                </tr>
-                <div *ngIf="i%2==0" class="collapse out market-row1 all-info" [attr.id]="marketData.id">
-                   <div style="margin-left: 6%; padding:10px 10px 10px 30px ;" class="d-flex flex-column" > 
-                      <div style="padding-top:10px; padding-bottom:20px">{{marketData.about}}</div>
-                      <div class="d-flex flex-row justify-content-start align-items-center">
-                        <div class="d-flex flex-row width-25">
-                            <div style="padding-right:10px">
-                                <img src="assets/img/coins.svg" class="param-icon" alt="">
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="sub-heading"> {{marketData.total}}</div>
-                                <div>Total {{marketData.crpto}}s</div>
-                            </div>
+      <h1 class="main-header">Real-time Cryptocurrency Exchange Rates by Market Capitalization </h1>
+      <h2 class="main-subtitle">Check aggregated crypto price data for for the top 50, including Bitcoin & Ethereum</h2>
+      <!-- <a class="btn btn-primary main-btn" href="#" role="button">Consume via API</a> -->
+      <a class="btn btn-primary main-btn" href="https://bitcoinaverage.com/en/plans" role="button" target="_blank">Consume via API</a>
+      <table class="table table-responsive-lg main-table">
+        <thead>
+          <tr>
+            <th style="width:2%;"></th>
+            <th class="sortable-th" style="width:4%;" (click)="orderBy('crypto')" [ngClass]="(orderByCol == '-crypto' || orderByCol == 'crypto') ?'active-sort': ''">CRYPTO</th>
+            <th class="sortable-th" style="width:8%;" (click)="orderBy('last')" [ngClass]="(orderByCol == '-last' || orderByCol == 'last') ?'active-sort': ''">LAST</th>
+            <th class="sortable-th" style="width:8%;" (click)="orderBy('bid')" [ngClass]="(orderByCol == '-bid' || orderByCol == 'bid') ?'active-sort': ''">BID</th>
+            <th class="sortable-th" style="width:9%;" (click)="orderBy('ask')" [ngClass]="(orderByCol == '-ask' || orderByCol == 'ask') ?'active-sort': ''">ASK</th>
+            <th class="sortable-th" style="width:10%;" (click)="orderBy('high')" [ngClass]="(orderByCol == '-high' || orderByCol == 'high') ?'active-sort': ''">HIGH</th>
+            <th class="sortable-th" style="width:10%;" (click)="orderBy('low')" [ngClass]="(orderByCol == '-low' || orderByCol == 'low') ?'active-sort': ''">LOW</th>
+            <th class="sortable-th" style="width:20%;" (click)="orderBy('market_cap')" [ngClass]="(orderByCol == '-market_cap' || orderByCol == 'market_cap') ?'active-sort': ''">MKTCAP</th>
+            <th class="sortable-th" style="width:20%" (click)="orderBy('volume')" [ngClass]="(orderByCol == '-volume' || orderByCol == 'volume') ?'active-sort': ''">VOL</th>
+            <th class="sortable-th" style="width:6%" (click)="orderBy('change_percent')" [ngClass]="(orderByCol == '-change_percent' || orderByCol == 'change_percent') ?'active-sort': ''">CHANGE</th>
+            <th style="width:1%;"></th>
+            <th style="width:1%;" class="row-ctrl" (click)="expandAll()"><i class="crypto-icon-minus" placement="bottom" ngbTooltip="Expand/Collapse All Rows"></i></th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-template *ngIf="sortedData.length" ngFor let-row [ngForOf]="sortedData | orderBy : orderByCol : bSort | slice : 0 : records"  let-i="index" let-isEven="even" let-isOdd="odd" let-isFirst="first" let-isLast="last">
+            <tr data-toggle="collapse" (click)="selectRow(row,'view')">
+              <td class="crypto-logo">
+                <a (click)="redirect(row.crypto,row.target,row.target_market)">
+                  <img style="vertical-align:middle" class="tab-curr-icon" src="assets/img/logo/32/{{row.crypto}}.png" alt="crypto">
+                </a>
+              </td>
+              <td class="crypto-name"><b (click)="redirect(row.crypto,row.target,row.target_market)">{{row.crypto}}</b></td>
+              <td style="width:8%;"><span class="badge" [ngClass]="row.isFresh?{'badge-success' : (row.nLast == 1),'badge-danger' : (row.nLast == -1)}:''">{{row.last | number : '.2-2'}}</span></td>
+              <td style="width:8%;"><span class="badge" [ngClass]="row.isFresh?{'badge-success' : (row.nBid == 1),'badge-danger' : (row.nBid == -1)}:''"> {{row.bid | number : '.2-2'}}</span></td>
+              <td style="width:9%;"><span class="badge" [ngClass]="row.isFresh?{'badge-success' : (row.nAsk == 1),'badge-danger' : (row.nAsk == -1)}:''"> {{row.ask | number : '.2-2'}}</span></td>
+              <td style="width:10%;"><span class="badge" [ngClass]="row.isFresh?{'badge-success' : (row.nHigh == 1),'badge-danger' : (row.nHigh == -1)}:''"> {{row.high | number : '.2-2'}}</span></td>
+              <td style="width:10%;"><span class="badge" [ngClass]="row.isFresh?{'badge-success' : (row.nLow == 1),'badge-danger' : (row.nLow == -1)}:''"> {{row.low | number : '.2-2'}}</span></td>
+              <td style="width:20%;"> ${{row.market_cap | number : '.2-2'}}</td>
+              <td style="width:20%;"> ${{row.volume | number : '.2-2'}}</td>
+              <!-- <td style="width:6%;" [ngClass]="row.isFresh?{'success-text' : (row.nChangePercent == 1),'danger-text' : (row.nChangePercent == -1)}:''">{{row.change_percent | number : '.2-2'}}%</td> -->
+              <td style="width:6%;" [ngClass]="{'success-text' : (row.change_percent > 0),'danger-text' : (row.change_percent < 0)}">{{row.change_percent | number : '.2-2'}}%</td>
+              <td style="width:1%;"><i class="crypto-icon-progress"></i></td>
+              <td style="width:1%;" ><i placement="right" ngbTooltip="Expand Row" *ngIf="!row.expand" class="crypto-icon-plus"></i><i placement="right" ngbTooltip="Collapse Row" *ngIf="row.expand" class="crypto-icon-minus"></i></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="11">
+                <div id="{{row.crypto}}" [ngClass]="row.expand ?'info-display': 'info-hide'">
+                  <div class="description-row">
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+                    <p>{{coinTextService.getCoinType(row.crypto)}}</p>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="param-icon">
+                          <img src="assets/img/coins.svg" alt="coins">
                         </div>
-                        <div class="d-flex flex-row width-25">
-                            <div style="padding-right:10px">
-                                <img src="assets/img/business.svg" class="param-icon" alt="">
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="sub-heading">{{marketData.mktcap}}</div>
-                                <div>Market Capitalization</div>
-                            </div>
+                        <div class="param-text">
+                          <div class="count-number">{{row.circulating_supply | number : '.3'}} {{row.crypto}}</div>
+                          <div>Total {{row.crypto}}s</div>
                         </div>
-                        <div></div>
                       </div>
-                   </div>
-                </div>
-                <tr *ngIf="i%2!=0 && shouldToggle" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center market-row market-row2" data-toggle="collapse" [attr.data-target]="'#'+ marketData.id">
-                    <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
-                    <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
-                    <td style="width:8%;">{{marketData.last}}</td>
-                    <td style="width:8%;">{{marketData.bid}}</td>
-                    <td style="width:9%;">{{marketData.ask}}</td>
-                    <td style="width:9%;">{{marketData.high}}</td>
-                    <td style="width:9%;">{{marketData.low}}</td>
-                    <td style="width:16%;">{{marketData.mktcap}}</td>
-                    <td style="width:16%;">{{marketData.vol}}</td>
-                    <td style="width:4%;">{{marketData.change}}</td>
-                    <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;"><i class="fas fa-plus rounded-border" [attr.id]="'abc'+i"></i><i [attr.id]="'abcd'+i" class="fas fa-minus hidden"></i> </td>
-                </tr>
-                <tr *ngIf="i%2!==0 && !shouldToggle" (click)="toggleIcon(i)" class="d-flex justify-content-between align-items-center market-row market-row2">
-                    <td class="crypto-logo" style="width:6%;"><img alt="crypto" class="tab-curr-icon" style="vertical-align:middle" [src]="marketData.image"></td>
-                    <td class="crypto-name" style="width:9%;"><b>{{marketData.crpto}}</b></td>
-                    <td style="width:8%;">{{marketData.last}}</td>
-                    <td style="width:8%;">{{marketData.bid}}</td>
-                    <td style="width:9%;">{{marketData.ask}}</td>
-                    <td style="width:9%;">{{marketData.high}}</td>
-                    <td style="width:9%;">{{marketData.low}}</td>
-                    <td style="width:16%;">{{marketData.mktcap}}</td>
-                    <td style="width:16%;">{{marketData.vol}}</td>
-                    <td style="width:4%;">{{marketData.change}}</td>
-                    <td style="width:2%;"><i style="font-size:12px" class="fas fa-signal"></i></td>
-                    <td style="width:3%;"><i class="fas fa-plus hidden" [attr.id]="'abc'+i" ></i><i [attr.id]="'abcd'+i" class="fas fa-minus"></i> </td>
-                </tr>
-                <div *ngIf="i%2!=0" class="collapse out market-row2 all-info" [attr.id]="marketData.id">
-                    <div style="margin-left: 6%; padding:10px 10px 10px 30px ;" class="d-flex flex-column" > 
-                        <div style="padding-top:10px; padding-bottom:20px">{{marketData.about}}</div>
-                        <div class="d-flex flex-row justify-content-start align-items-center">
-                          <div class="d-flex flex-row width-25">
-                              <div style="padding-right:10px">
-                                  <img src="assets/img/coins.svg" class="param-icon" alt="">
-                              </div>
-                              <div class="d-flex flex-column">
-                                  <div class="sub-heading"> {{marketData.total}}</div>
-                                  <div>Total {{marketData.crpto}}s</div>
-                              </div>
-                          </div>
-                          <div class="d-flex flex-row width-25">
-                              <div style="padding-right:10px">
-                                  <img src="assets/img/business.svg" class="param-icon" alt="">
-                              </div>
-                              <div class="d-flex flex-column">
-                                  <div class="sub-heading">{{marketData.mktcap}}</div>
-                                  <div>Market Capitalization</div>
-                              </div>
-                          </div>
-                          <div></div>
+                      <div class="col-md-4">
+                        <div class="param-icon">
+                          <img src="assets/img/business.svg" alt="business">
                         </div>
-                     </div>
+                        <div class="param-text">
+                          <div class="count-number">$ {{row.market_cap | number : '.3-3'}}</div>
+                          <div>Market Capitalization</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </td>
+            </tr>
+          </ng-template>
+        </tbody>
+      </table>
+      <div class="table-actions">
+        <span>Load</span>
+        <input class="form-control table-lenght-input" type="text" [(ngModel)]="toDisplay" placeholder="10">
+        <span>currencies</span>
+        <button type="button" class="btn btn-primary table-lenght-btn" (click)="updateRecordsToDisplay()">GO</button>
+      </div>
+    </div>
+    <section class="solutions-section bg-white">
+      <div class="container">
+        <owl-carousel
+          [options]= "carouselOptions"
+          [items]="images"
+          [carouselClasses]="['owl-theme', 'sliding']">
+          <div class="item deal-slide" *ngFor="let image of images;let i = index">
+            <div class="coupons-div" style="cursor:pointer;">
+              <img class="deals-image" src="{{image}}" alt="deals"/><br/>
             </div>
-            </tbody>
-        </table>
-        <div style="color:#d8d8d8; padding:38px 0" class="d-flex flex-row justify-content-center align-items-center text-center">
-            <span>Load</span>
-            <input value="50" style="padding:6px 12px;margin: 0px 9.5px; width:50px" type="text" class="form-control" id="filterInput">
-            <span>currencies</span>
-            <button style="padding:6px 12px;margin: 0px 9.5px;" type="button" class="btn btn-primary table-lenght-btn" (click)="filter()">Go</button>
-        </div>
-    </div>    
-</div>
+          </div>
+        </owl-carousel>
+      </div>
+    </section>
+  </main>
+  

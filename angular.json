@@ -24,7 +24,8 @@
               "socket.io-client",
               "socket.io-parser",
               "debug",
-              "chart.js"
+              "chart.js",
+              "ngx-owl-carousel/index"
               ],
             "outputPath": "dist/ba-frontend11/browser",
             "index": "src/index.html",
